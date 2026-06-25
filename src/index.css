@@ -1,0 +1,66 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0F766E;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16A34A;
+}
+
+/* Global button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300;
+}
+
+/* Utility classes */
+.section-spacing {
+  @apply py-16 px-4 md:px-8 lg:px-16;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #0F766E 0%, #16A34A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-shadow {
+  @apply shadow-lg hover:shadow-2xl transition-shadow duration-300;
+}
