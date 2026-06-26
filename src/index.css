@@ -2,6 +2,10 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+  color-scheme: light;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,11 +18,27 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  color: #1f2937;
-  background-color: #ffffff;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 30%),
+    linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Scrollbar styling */
+img,
+video,
+iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: #0f766e;
+  color: #ffffff;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -28,39 +48,41 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0F766E;
-  border-radius: 5px;
+  background: #0f766e;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #16A34A;
+  background: #16a34a;
 }
 
-/* Global button styles */
 .btn-primary {
-  @apply px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all duration-300;
+  @apply inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-opacity-90;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300;
+  @apply inline-flex items-center justify-center rounded-full border border-primary/20 bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-white;
 }
 
-/* Utility classes */
 .section-spacing {
-  @apply py-16 px-4 md:px-8 lg:px-16;
+  @apply px-3 py-16 sm:px-6 sm:py-20 lg:px-8;
 }
 
 .container-custom {
-  @apply max-w-7xl mx-auto;
+  @apply mx-auto w-full max-w-7xl px-3 sm:px-6 lg:px-8;
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #0F766E 0%, #16A34A 100%);
+  background: linear-gradient(135deg, #0f766e 0%, #16a34a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .card-shadow {
-  @apply shadow-lg hover:shadow-2xl transition-shadow duration-300;
+  @apply shadow-[0_20px_60px_-20px_rgba(15,23,42,0.22)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_-18px_rgba(15,23,42,0.28)];
+}
+
+.soft-card {
+  @apply rounded-[1.75rem] border border-slate-200/80 bg-white/80 shadow-[0_18px_45px_-20px_rgba(15,23,42,0.2)] backdrop-blur-xl;
 }

@@ -77,7 +77,6 @@ function AppContent() {
         <Route path="/products" element={
           <main className="font-inter">
             <ProductListing onProductClick={handleViewProduct} />
-            <Contact />
           </main>
         } />
         <Route path="/product/:id" element={
@@ -102,3 +101,5 @@ function App() {
     </Router>
   )
 }
+
+export default App

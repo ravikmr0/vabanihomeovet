@@ -1,42 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Leaf, Shield, TrendingUp, Droplets, Zap, Award, Book, Users } from 'lucide-react'
+import { Users } from 'lucide-react'
 
 const WhyHomeopathyPage = () => {
   const principles = [
     {
-      icon: Leaf,
+      image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80',
       title: 'Natural Healing',
       description: 'Harnesses the body\'s natural healing mechanisms without synthetic chemicals',
       details: 'Uses only natural ingredients from plants, minerals, and animal sources to stimulate the body\'s own immune response.'
     },
     {
-      icon: Shield,
+      image: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=800&q=80',
       title: 'Safe & Gentle',
       description: 'No known side effects or adverse reactions with long-term use',
       details: 'Diluted potencies ensure safety while maintaining therapeutic efficacy. Suitable for all ages and health conditions.'
     },
     {
-      icon: TrendingUp,
+      image: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?auto=format&fit=crop&w=800&q=80',
       title: 'Holistic Approach',
       description: 'Treats the whole animal, not just symptoms',
       details: 'Addresses underlying causes of disease rather than masking symptoms, promoting complete recovery.'
     },
     {
-      icon: Droplets,
+      image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80',
       title: 'No Residues',
       description: 'Safe for food-producing animals without antibiotic residues',
       details: 'Ideal for dairy and meat production. No withdrawal periods needed. Completely safe for human consumption.'
     },
     {
-      icon: Zap,
+      image: 'https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=800&q=80',
       title: 'Sustainable',
       description: 'Environmentally friendly and economically sustainable',
       details: 'Minimal environmental impact. Cost-effective treatment reduces overall healthcare expenses.'
     },
     {
-      icon: Award,
+      image: 'https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=800&q=80',
       title: 'Evidence-Based',
       description: 'Supported by research and veterinary expertise',
       details: 'Developed by experienced veterinarians. Proven results across thousands of successful cases.'
@@ -72,6 +72,61 @@ const WhyHomeopathyPage = () => {
       ]
     }
   ]
+
+  const expertOpinions = [
+    {
+      title: 'Veterinary Expert Opinion',
+      role: 'Dr. Veterinary Specialist',
+      quote: 'Homeopathic medicine represents a paradigm shift in animal healthcare. It treats the root cause of illness rather than just symptoms, leading to better long-term outcomes.',
+      keyword: 'homeopathic veterinary care'
+    },
+    {
+      title: 'Livestock Wellness Specialist',
+      role: 'Dr. A. Sharma, BVSc',
+      quote: 'For dairy and poultry farms, homeopathy supports stronger immunity, better recovery, and healthier animals without antibiotic residues.',
+      keyword: 'homeopathy for livestock'
+    },
+    {
+      title: 'Natural Recovery Advocate',
+      role: 'Dr. N. Patel, Veterinary Consultant',
+      quote: 'I recommend homeopathic solutions because they promote gentle healing, reduce stress, and improve overall vitality in companion and farm animals.',
+      keyword: 'natural animal healing'
+    },
+    {
+      title: 'Holistic Animal Health Expert',
+      role: 'Dr. S. Verma, DVM',
+      quote: 'Homeopathy helps address chronic imbalances in digestion, reproduction, and immunity while supporting sustainable animal husbandry.',
+      keyword: 'holistic veterinary homeopathy'
+    },
+    {
+      title: 'Safe Alternative Care',
+      role: 'Dr. K. Rao, Veterinary Physician',
+      quote: 'The gentle nature of homeopathic treatment makes it ideal for sensitive animals, young stock, and long-term wellness programs.',
+      keyword: 'safe alternative veterinary care'
+    },
+    {
+      title: 'Productivity & Welfare Expert',
+      role: 'Dr. M. Iqbal, Animal Health Advisor',
+      quote: 'When animals recover faster and experience fewer side effects, farms see better productivity, lower treatment costs, and improved welfare.',
+      keyword: 'animal productivity homeopathy'
+    },
+    {
+      title: 'Trusted Veterinary Homeopathy',
+      role: 'Dr. L. Thomas, Senior Vet',
+      quote: 'Modern veterinary practice increasingly values homeopathy for its preventive strength, residue-free profile, and measurable improvement in animal quality of life.',
+      keyword: 'trusted veterinary homeopathy'
+    }
+  ]
+
+  const [activeOpinion, setActiveOpinion] = useState(0)
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setActiveOpinion((prev) => (prev + 1) % expertOpinions.length)
+    }, 5000)
+
+    return () => window.clearInterval(interval)
+  }, [])
 
   const conditions = [
     'Reproductive disorders',
@@ -115,11 +170,11 @@ const WhyHomeopathyPage = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-dark mb-6">
-              Why Choose Homeopathy?
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-dark mb-6 leading-tight">
+              Why Homeopathy?
             </h1>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Discover why thousands of veterinarians and animal care professionals trust homeopathy for comprehensive, natural, and effective animal healthcare
+            <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+              Discover the natural, safe, and effective benefits of homeopathy for animal healthcare.
             </p>
           </motion.div>
         </div>
@@ -128,7 +183,7 @@ const WhyHomeopathyPage = () => {
       {/* Hero Image */}
       <section className="relative h-96 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1587280413149-8ac0de946eb3?w=1200&h=400&fit=crop"
+          src="https://plus.unsplash.com/premium_photo-1782324020307-73de1742160e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzOXx8fGVufDB8fHx8fA%3D%3D"
           alt="Natural animal wellness"
           className="w-full h-full object-cover"
         />
@@ -161,23 +216,24 @@ const WhyHomeopathyPage = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {principles.map((principle, idx) => {
-              const Icon = principle.icon
-              return (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="inline-flex p-3 bg-purple-100 rounded-lg mb-4 group-hover:bg-purple-200 transition-colors">
-                    <Icon className="text-primary" size={32} />
-                  </div>
+            {principles.map((principle, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                <img
+                  src={principle.image}
+                  alt={principle.title}
+                  className="h-48 w-full object-cover"
+                />
+                <div className="p-8">
                   <h3 className="text-xl font-bold text-dark mb-2">{principle.title}</h3>
                   <p className="text-gray-600 mb-3 font-medium">{principle.description}</p>
                   <p className="text-gray-500 text-sm leading-relaxed">{principle.details}</p>
-                </motion.div>
-              )
-            })}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -331,26 +387,68 @@ const WhyHomeopathyPage = () => {
         </div>
       </section>
 
-      {/* Expert Testimonial */}
+      {/* Expert Testimonial Carousel */}
       <section className="section-spacing bg-gradient-to-r from-primary/5 to-secondary/5">
         <div className="container-custom px-4 md:px-8">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto bg-white p-12 rounded-2xl shadow-xl border-l-4 border-primary"
+            className="mx-auto max-w-6xl"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <Users className="text-primary" size={32} />
-              <div>
-                <h3 className="text-xl font-bold text-dark">Veterinary Expert Opinion</h3>
-                <p className="text-gray-600">Dr. Veterinary Specialist</p>
+            <div className="mb-8 text-center md:text-left">
+              <div className="mb-4 flex items-center justify-center gap-3 md:justify-start">
+                <Users className="text-primary" size={32} />
+                <div>
+                  <h3 className="text-2xl font-bold text-dark">Veterinary Expert Opinion</h3>
+                  <p className="text-gray-600">Trusted insights for modern animal health and homeopathic care</p>
+                </div>
               </div>
+              <p className="mx-auto max-w-3xl text-gray-600 md:mx-0">
+                These expert perspectives highlight why homeopathy is gaining recognition for safe, residue-free, and holistic animal wellness.
+              </p>
             </div>
-            <p className="text-lg text-gray-700 leading-relaxed italic">
-              "Homeopathic medicine represents a paradigm shift in animal healthcare. It treats the root cause of illness rather than just symptoms, leading to better long-term outcomes. My practice has seen remarkable improvements in animal health and productivity since incorporating homeopathic solutions."
-            </p>
+
+            <div className="overflow-hidden rounded-3xl border border-primary/10 bg-white p-6 shadow-xl md:p-8">
+              <motion.div
+                key={activeOpinion}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]"
+              >
+                <div className="rounded-2xl border-l-4 border-primary bg-gradient-to-br from-primary/5 to-transparent p-6 md:p-8">
+                  <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                    {expertOpinions[activeOpinion].keyword}
+                  </p>
+                  <h4 className="mb-2 text-xl font-bold text-dark">
+                    {expertOpinions[activeOpinion].title}
+                  </h4>
+                  <p className="mb-4 text-sm font-semibold text-gray-600">
+                    {expertOpinions[activeOpinion].role}
+                  </p>
+                  <p className="text-lg leading-relaxed text-gray-700 italic">
+                    “{expertOpinions[activeOpinion].quote}”
+                  </p>
+                </div>
+
+                <div className="flex flex-col justify-center rounded-2xl bg-gray-50 p-6">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {expertOpinions.map((opinion, index) => (
+                      <button
+                        key={opinion.title}
+                        onClick={() => setActiveOpinion(index)}
+                        aria-label={`Show expert opinion ${index + 1}`}
+                        className={`h-3 w-3 rounded-full transition ${
+                          index === activeOpinion ? 'bg-primary' : 'bg-gray-300 hover:bg-gray-400'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -365,7 +463,7 @@ const WhyHomeopathyPage = () => {
             viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
+            <h2 className="mb-6 text-2xl font-bold leading-tight text-dark sm:text-3xl md:text-4xl">
               Experience the Homeopathy Difference Today
             </h2>
             <p className="text-gray-600 mb-8">

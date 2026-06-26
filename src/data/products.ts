@@ -79,7 +79,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: true,
-    image: '💊',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80',
     price: 'Contact for pricing'
   },
   {
@@ -109,7 +109,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '💊'
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5f400f6f4?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 3,
@@ -137,7 +137,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '💊'
+    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 4,
@@ -165,7 +165,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '💊'
+    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 5,
@@ -193,7 +193,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '💊'
+    image: 'https://images.unsplash.com/photo-1594756202469-9f4f23d86bdb?auto=format&fit=crop&w=1000&q=80'
   },
 
   // Digestive & Liver Care Category
@@ -224,7 +224,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: true,
-    image: '🌿'
+    image: 'https://images.unsplash.com/photo-1587280413149-8ac0de946eb3?auto=format&fit=crop&w=1000&q=80'
   },
 
   // Respiratory Care Category
@@ -255,7 +255,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '💨'
+    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80'
   },
 
   // Urinary Care Category
@@ -286,7 +286,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '💧'
+    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80'
   },
 
   // Fever & Heat Stress Management Category
@@ -316,7 +316,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '🔥'
+    image: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 10,
@@ -345,7 +345,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '❄️'
+    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80'
   },
 
   // Skin & Disease Management Category
@@ -376,7 +376,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: true,
-    image: '🛡️'
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 12,
@@ -405,7 +405,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '💊'
+    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80'
   },
 
   // Dairy Productivity & Nutrition Category
@@ -437,7 +437,7 @@ export const PRODUCTS = [
     ingredients: 'Comprehensive micronutrient complex',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: true,
-    image: '💊',
+    image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=80',
     price: 'Contact for pricing'
   },
   {
@@ -466,7 +466,7 @@ export const PRODUCTS = [
     ingredients: 'Calcium, Phosphorus, minerals and vitamins',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: false,
-    image: '🥛'
+    image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 15,
@@ -494,7 +494,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: true,
-    image: '💊'
+    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1000&q=80'
   },
   {
     id: 16,
@@ -523,7 +523,7 @@ export const PRODUCTS = [
     ingredients: 'Natural homeopathic ingredients',
     storage: 'Keep in cool, dry place away from direct sunlight',
     featured: true,
-    image: '💊'
+    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80'
   }
 ]
 

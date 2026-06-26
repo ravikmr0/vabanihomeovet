@@ -7,41 +7,34 @@ const AboutPage = () => {
   const missionValues = [
     {
       icon: Heart,
-      title: 'Animal Welfare First',
-      description: 'Committed to the health and wellness of all animals through natural remedies'
+      title: 'Compassionate Care',
+      description: 'We approach every animal with empathy, attention, and a deep respect for its comfort and wellbeing.'
     },
     {
       icon: Award,
-      title: 'Quality Excellence',
-      description: 'Highest standards in formulation, testing, and packaging'
+      title: 'Quality & Safety',
+      description: 'Every formulation is developed with rigorous standards to support dependable results and trusted use.'
     },
     {
       icon: Users,
       title: 'Trusted Partnership',
-      description: 'Supporting veterinarians, farmers, and pet owners with expertise'
+      description: 'We work closely with veterinarians, farmers, and pet owners to provide practical support when it matters most.'
     },
     {
       icon: Zap,
       title: 'Innovation',
-      description: 'Continuously researching and developing new solutions'
+      description: 'We continue to research and refine solutions that meet the evolving needs of animal healthcare.'
     },
     {
       icon: Target,
-      title: 'Accessibility',
-      description: 'Making premium animal healthcare affordable for everyone'
+      title: 'Accessible Wellness',
+      description: 'Our goal is to make high-quality animal healthcare simpler to access and easier to trust.'
     },
     {
       icon: CheckCircle,
-      title: 'Sustainability',
-      description: 'Environmentally responsible and sustainable practices'
+      title: 'Responsibility',
+      description: 'We believe in mindful, sustainable practices that support both animals and the communities they serve.'
     }
-  ]
-
-  const timeline = [
-    { year: '2010', milestone: 'Company Founded' },
-    { year: '2015', milestone: 'Expanded Product Lines' },
-    { year: '2018', milestone: 'Quality Certifications' },
-    { year: '2022', milestone: 'National Recognition' }
   ]
 
   const containerVariants = {
@@ -79,7 +72,7 @@ const AboutPage = () => {
               About Vibani Homeo Vet
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed">
-              Pioneering natural veterinary healthcare solutions with over a decade of excellence in homeopathic medicine for animals
+              We are committed to advancing animal wellness through thoughtful homeopathic care, trusted formulations, and practical support for professionals and families alike.
             </p>
           </motion.div>
         </div>
@@ -98,17 +91,17 @@ const AboutPage = () => {
               className="space-y-6"
             >
               <div>
-                <h2 className="text-4xl font-bold text-dark mb-4">Who We Are</h2>
+                <h2 className="text-4xl font-bold text-dark mb-4">A trusted partner in animal wellness</h2>
                 <div className="w-16 h-1 bg-gradient-to-r from-primary to-secondary"></div>
               </div>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Vibani Homeo Vet is a leading veterinary homeopathic pharmaceutical company dedicated to providing innovative, safe, and effective healthcare solutions for livestock, poultry, dairy animals, pets, and companion animals.
+                Vibani Homeo Vet is a veterinary-focused brand dedicated to supporting animal health with safe, effective, and thoughtfully formulated homeopathic solutions for livestock, poultry, dairy animals, pets, and companion animals.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                With a team of experienced veterinary professionals and researchers, we've developed over 500 specialized formulations that address diverse animal health needs. Our commitment to quality and efficacy has earned us the trust of thousands of veterinarians, farmers, and pet owners across India.
+                Our work is guided by a simple belief: every animal deserves compassionate care, dependable support, and access to high-quality wellness solutions. We combine time-tested homeopathic principles with modern pharmaceutical discipline to create products that are practical, trusted, and easy to rely on.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                We believe that every animal deserves access to premium healthcare. That's why we combine traditional homeopathic wisdom with modern pharmaceutical standards to create solutions that are both effective and affordable.
+                From everyday wellness support to more serious health concerns, our focus remains the same—to help animals live healthier, more comfortable lives with confidence and care.
               </p>
             </motion.div>
 
@@ -131,7 +124,52 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Mission & Values */}
+      {/* Mission & Vision */}
+      <section className="section-spacing bg-white">
+        <div className="container-custom px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="rounded-3xl border border-slate-200 bg-gradient-to-br from-teal-50 to-white p-8 shadow-sm"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Our Mission</p>
+              <h3 className="mt-4 text-2xl font-bold text-dark">To make dependable animal healthcare more accessible, practical, and trustworthy.</h3>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                We strive to provide high-quality homeopathic veterinary solutions that support recovery, comfort, and long-term wellbeing across a wide range of animal care settings.
+              </p>
+              <ul className="mt-6 space-y-3 text-gray-700">
+                <li className="flex items-start gap-2"><CheckCircle className="mt-0.5 flex-shrink-0 text-primary" size={18} />Deliver safe and thoughtful wellness support.</li>
+                <li className="flex items-start gap-2"><CheckCircle className="mt-0.5 flex-shrink-0 text-primary" size={18} />Support veterinarians, farmers, and pet caregivers with confidence.</li>
+                <li className="flex items-start gap-2"><CheckCircle className="mt-0.5 flex-shrink-0 text-primary" size={18} />Promote natural care backed by quality and consistency.</li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="rounded-3xl border border-slate-200 bg-slate-900 p-8 text-white shadow-sm"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300">Our Vision</p>
+              <h3 className="mt-4 text-2xl font-bold">To become a leading force in natural veterinary wellness, driven by trust, innovation, and compassionate care.</h3>
+              <p className="mt-4 text-slate-300 leading-relaxed">
+                We envision a future where animal care is more holistic, more accessible, and more deeply rooted in preventive wellness and responsible treatment.
+              </p>
+              <ul className="mt-6 space-y-3 text-slate-200">
+                <li className="flex items-start gap-2"><CheckCircle className="mt-0.5 flex-shrink-0 text-teal-300" size={18} />Expand awareness of natural veterinary support.</li>
+                <li className="flex items-start gap-2"><CheckCircle className="mt-0.5 flex-shrink-0 text-teal-300" size={18} />Build long-term trust through ethical and effective solutions.</li>
+                <li className="flex items-start gap-2"><CheckCircle className="mt-0.5 flex-shrink-0 text-teal-300" size={18} />Create a stronger standard for animal wellbeing in everyday care.</li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Principles & Values */}
       <section className="section-spacing bg-light">
         <div className="container-custom px-4 md:px-8">
           <motion.div
@@ -142,10 +180,10 @@ const AboutPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
-              Our Core Values
+              Our Principles
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Guiding principles that shape everything we do
+              The values that guide our products, partnerships, and commitment to animal wellbeing
             </p>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-6"></div>
           </motion.div>
@@ -177,47 +215,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="section-spacing">
-        <div className="container-custom px-4 md:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
-              Our Journey
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {timeline.map((item, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                className="relative text-center"
-              >
-                <div className="bg-gradient-to-br from-primary to-secondary p-8 rounded-xl text-white shadow-lg">
-                  <div className="text-3xl font-bold mb-2">{item.year}</div>
-                  <p className="font-semibold">{item.milestone}</p>
-                </div>
-                {idx < timeline.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-transparent transform -translate-y-1/2"></div>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* Stats Section */}
       <section className="section-spacing bg-gradient-to-r from-primary to-secondary text-white">

@@ -87,18 +87,23 @@ const FeaturedProducts = ({ onViewAll, onProductView }) => {
           {/* Main Slide */}
           <motion.div
             variants={itemVariants}
-            className="bg-white rounded-2xl overflow-hidden card-shadow border border-gray-100"
+            className="overflow-hidden rounded-2xl border border-gray-100 bg-white card-shadow"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 min-h-[500px]">
+            <div className="grid min-h-[auto] grid-cols-1 gap-0 lg:grid-cols-2 lg:min-h-[500px]">
               {/* Product Image/Icon */}
               <motion.div
                 key={currentProduct.id}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center text-8xl"
+                className="min-h-[260px] bg-gradient-to-br from-primary/10 to-secondary/10 sm:min-h-[320px] lg:min-h-full"
               >
-                {currentProduct.image}
+                <img
+                  src={currentProduct.image}
+                  alt={currentProduct.name}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </motion.div>
 
               {/* Product Info */}
@@ -107,7 +112,7 @@ const FeaturedProducts = ({ onViewAll, onProductView }) => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="p-8 md:p-12 flex flex-col justify-between"
+                className="flex flex-col justify-between p-6 sm:p-8 md:p-10 lg:p-12"
               >
                 {/* Badge & Title */}
                 <div>
@@ -200,7 +205,7 @@ const FeaturedProducts = ({ onViewAll, onProductView }) => {
             onClick={prevSlide}
             onMouseEnter={() => setAutoPlay(false)}
             onMouseLeave={() => setAutoPlay(true)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-white hover:bg-primary hover:text-white rounded-full shadow-lg transition-all transform -translate-x-4 lg:-translate-x-8"
+            className="absolute left-2 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-all hover:bg-primary hover:text-white sm:left-4 sm:flex sm:-translate-x-4 lg:-translate-x-8"
           >
             <ChevronLeft size={24} />
           </motion.button>
@@ -212,7 +217,7 @@ const FeaturedProducts = ({ onViewAll, onProductView }) => {
             onClick={nextSlide}
             onMouseEnter={() => setAutoPlay(false)}
             onMouseLeave={() => setAutoPlay(true)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 p-3 bg-white hover:bg-primary hover:text-white rounded-full shadow-lg transition-all transform translate-x-4 lg:translate-x-8"
+            className="absolute right-2 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white p-3 shadow-lg transition-all hover:bg-primary hover:text-white sm:right-4 sm:flex sm:translate-x-4 lg:translate-x-8"
           >
             <ChevronRight size={24} />
           </motion.button>

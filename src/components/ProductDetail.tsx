@@ -125,9 +125,14 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
             {/* Product Image */}
             <motion.div
               variants={itemVariants}
-              className="h-80 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl flex items-center justify-center text-8xl border border-gray-100"
+              className="h-80 overflow-hidden rounded-xl border border-gray-100"
             >
-              {product.image}
+              <img
+                src={product.image}
+                alt={product.name}
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
             </motion.div>
 
             {/* Overview */}

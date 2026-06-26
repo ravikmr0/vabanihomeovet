@@ -36,17 +36,24 @@ const ContactPage = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91-XXXX-XXXX-XXX', 'Mon-Fri: 9AM-6PM']
+      details: [
+        { text: '+91 7906410606', href: 'tel:+917906410606' },
+        { text: 'Mon-Fri: 9AM-6PM' }
+      ]
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@capitalh.com', 'support@capitalh.com']
+      details: [
+        { text: 'info@vibanihomeovet.com', href: 'mailto:info@vibanihomeovet.com' }
+      ]
     },
     {
       icon: MapPin,
       title: 'Address',
-      details: ['123 Healthcare Plaza, City, State', 'India - PIN Code']
+      details: [
+        { text: 'Vibani Homeo Vet., Bajna Cut, Yamuna Expressway, MaharamGarhi, Bajna, Mathura - 281201, U.P., India' }
+      ]
     },
     {
       icon: Clock,
@@ -114,14 +121,30 @@ const ContactPage = () => {
                   variants={itemVariants}
                   className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="inline-flex p-3 bg-primary/10 rounded-lg mb-4">
+                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                     <Icon className="text-primary" size={28} />
                   </div>
                   <h3 className="text-xl font-bold text-dark mb-3">{info.title}</h3>
                   <div className="space-y-1">
-                    {info.details.map((detail, i) => (
-                      <p key={i} className="text-gray-600 text-sm">{detail}</p>
-                    ))}
+                    {info.details.map((detail, i) => {
+                      if (typeof detail === 'string') {
+                        return (
+                          <p key={i} className="text-gray-600 text-sm">
+                            {detail}
+                          </p>
+                        )
+                      }
+
+                      return (
+                        <a
+                          key={i}
+                          href={detail.href}
+                          className="block text-sm text-gray-600 transition-colors hover:text-primary"
+                        >
+                          {detail.text}
+                        </a>
+                      )
+                    })}
                   </div>
                 </motion.div>
               )
@@ -131,19 +154,24 @@ const ContactPage = () => {
       </section>
 
       {/* Main Contact Section */}
-      <section className="section-spacing bg-light">
+      <section className="section-spacing bg-gradient-to-b from-emerald-50/70 via-white to-slate-50">
         <div className="container-custom px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white p-10 rounded-2xl shadow-lg"
+              className="bg-white p-8 md:p-10 rounded-[28px] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.18)] border border-emerald-100"
             >
-              <h2 className="text-3xl font-bold text-dark mb-2">Send us a Message</h2>
-              <p className="text-gray-600 mb-8">We'll respond to your inquiry within 24 hours</p>
+              <div className="mb-8">
+                <div className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-700 mb-4">
+                  Quick Response
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-dark mb-2">Send us a Message</h2>
+                <p className="text-gray-600">We typically respond within 24 hours with the support you need.</p>
+              </div>
 
               {submitted ? (
                 <motion.div
@@ -172,7 +200,7 @@ const ContactPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                         placeholder="Your name"
                       />
                     </div>
@@ -186,7 +214,7 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -201,7 +229,7 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                       placeholder="+91-XXXX-XXXX-XXX"
                     />
                   </div>
@@ -215,7 +243,7 @@ const ContactPage = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                     >
                       <option value="">Select a subject</option>
                       <option value="product-inquiry">Product Inquiry</option>
@@ -236,14 +264,14 @@ const ContactPage = () => {
                       onChange={handleChange}
                       required
                       rows="5"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all resize-none"
+                      className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all resize-none"
                       placeholder="Your message here..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="btn-primary w-full flex items-center justify-center gap-2"
+                    className="btn-primary w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-base shadow-[0_12px_30px_-12px_rgba(16,185,129,0.7)]"
                   >
                     <Send size={20} />
                     Send Message
@@ -258,10 +286,10 @@ const ContactPage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="space-y-6"
             >
               {/* Map */}
-              <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative h-80 rounded-[28px] overflow-hidden shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)] border border-slate-200">
                 <iframe
                   width="100%"
                   height="100%"
@@ -275,7 +303,7 @@ const ContactPage = () => {
               </div>
 
               {/* Additional Info */}
-              <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="bg-white p-8 rounded-[24px] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.16)] border border-slate-100">
                 <h3 className="text-2xl font-bold text-dark mb-6">Why Contact Us?</h3>
                 <ul className="space-y-4">
                   {[
@@ -293,24 +321,6 @@ const ContactPage = () => {
                 </ul>
               </div>
 
-              {/* Quick Links */}
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 rounded-xl border border-primary/20">
-                <h3 className="text-xl font-bold text-dark mb-4">Quick Links</h3>
-                <div className="space-y-2">
-                  <Link to="/products" className="block text-primary font-semibold hover:underline">
-                    → Browse Our Products
-                  </Link>
-                  <Link to="/about" className="block text-primary font-semibold hover:underline">
-                    → Learn About Us
-                  </Link>
-                  <Link to="/why-homeopathy" className="block text-primary font-semibold hover:underline">
-                    → Why Homeopathy
-                  </Link>
-                  <Link to="/research-quality" className="block text-primary font-semibold hover:underline">
-                    → Quality Assurance
-                  </Link>
-                </div>
-              </div>
             </motion.div>
           </div>
         </div>

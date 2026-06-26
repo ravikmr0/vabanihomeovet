@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Microscope, TestTube, Users, Lightbulb, Check, Beaker, Shield, TrendingUp } from 'lucide-react'
+import { Check } from 'lucide-react'
 
 const ResearchQualityPage = () => {
   const qualityStandards = [
     {
-      icon: Microscope,
+      image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=900&q=80',
       title: 'Advanced Testing',
       description: 'Rigorous laboratory testing at every production stage',
       details: [
@@ -17,7 +17,7 @@ const ResearchQualityPage = () => {
       ]
     },
     {
-      icon: Beaker,
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
       title: 'Pharmaceutical Standards',
       description: 'Adheres to highest pharmaceutical manufacturing protocols',
       details: [
@@ -28,7 +28,7 @@ const ResearchQualityPage = () => {
       ]
     },
     {
-      icon: Shield,
+      image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=900&q=80',
       title: 'Safety Assurance',
       description: 'Comprehensive safety protocols for all products',
       details: [
@@ -39,7 +39,7 @@ const ResearchQualityPage = () => {
       ]
     },
     {
-      icon: TrendingUp,
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80',
       title: 'Quality Metrics',
       description: 'Continuous monitoring and improvement systems',
       details: [
@@ -54,31 +54,31 @@ const ResearchQualityPage = () => {
   const researchAreas = [
     {
       title: 'Product Efficacy',
-      icon: TestTube,
+      image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=900&q=80',
       description: 'Validating effectiveness through scientific research and veterinary trials'
     },
     {
       title: 'New Formulations',
-      icon: Lightbulb,
+      image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80',
       description: 'Developing innovative solutions for emerging animal health challenges'
     },
     {
       title: 'Ingredient Research',
-      icon: Beaker,
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
       description: 'Exploring novel natural ingredients and their therapeutic properties'
     },
     {
       title: 'Clinical Applications',
-      icon: Users,
+      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80',
       description: 'Studying real-world applications and outcomes in veterinary practice'
     }
   ]
 
   const certifications = [
-    { name: 'ISO 9001:2015', description: 'Quality Management System' },
-    { name: 'GMP Certified', description: 'Good Manufacturing Practice' },
-    { name: 'FSSAI Registered', description: 'Food Safety Authority' },
-    { name: 'Ayush Approved', description: 'Ministry of AYUSH' }
+    { name: 'ISO 9001:2015', description: 'Quality Management System', image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=800&q=80' },
+    { name: 'GMP Certified', description: 'Good Manufacturing Practice', image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80' },
+    { name: 'FSSAI Registered', description: 'Food Safety Authority', image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80' },
+    { name: 'Ayush Approved', description: 'Ministry of AYUSH', image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80' }
   ]
 
   const containerVariants = {
@@ -125,11 +125,11 @@ const ResearchQualityPage = () => {
       {/* Hero Image */}
       <section className="relative h-96 overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1530026405186-a32e567ee231?w=1200&h=400&fit=crop"
+          src="https://images.unsplash.com/photo-1530026405186-a32e567ee231?auto=format&fit=crop&w=1600&q=80"
           alt="Laboratory research"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/35 to-transparent"></div>
       </section>
 
       {/* Quality Standards */}
@@ -158,17 +158,18 @@ const ResearchQualityPage = () => {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            {qualityStandards.map((standard, idx) => {
-              const Icon = standard.icon
-              return (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="inline-flex p-3 bg-blue-100 rounded-lg mb-4 group-hover:bg-blue-200 transition-colors">
-                    <Icon className="text-primary" size={32} />
-                  </div>
+            {qualityStandards.map((standard, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                <img
+                  src={standard.image}
+                  alt={standard.title}
+                  className="h-40 w-full object-cover"
+                />
+                <div className="p-8">
                   <h3 className="text-xl font-bold text-dark mb-2">{standard.title}</h3>
                   <p className="text-gray-600 mb-4 font-medium text-sm">{standard.description}</p>
                   <ul className="space-y-2">
@@ -179,9 +180,9 @@ const ResearchQualityPage = () => {
                       </li>
                     ))}
                   </ul>
-                </motion.div>
-              )
-            })}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -259,22 +260,19 @@ const ResearchQualityPage = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {researchAreas.map((area, idx) => {
-              const Icon = area.icon
-              return (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
-                >
-                  <div className="inline-flex p-3 bg-primary/20 rounded-lg mb-4">
-                    <Icon className="text-primary" size={32} />
-                  </div>
+            {researchAreas.map((area, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg overflow-hidden"
+              >
+                <img src={area.image} alt={area.title} className="h-40 w-full object-cover" />
+                <div className="p-8">
                   <h3 className="text-lg font-bold text-dark mb-3">{area.title}</h3>
                   <p className="text-gray-700 leading-relaxed">{area.description}</p>
-                </motion.div>
-              )
-            })}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -308,8 +306,12 @@ const ResearchQualityPage = () => {
                 variants={itemVariants}
                 className="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow"
               >
-                <div className="inline-flex w-16 h-16 items-center justify-center bg-gradient-to-br from-primary to-secondary text-white rounded-full mb-4 font-bold text-2xl">
-                  ✓
+                <div className="inline-flex w-20 h-20 items-center justify-center rounded-full mb-4 overflow-hidden bg-white shadow-md">
+                  <img
+                    src={cert.image}
+                    alt={`${cert.name} badge`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <h3 className="font-bold text-dark mb-2">{cert.name}</h3>
                 <p className="text-sm text-gray-600">{cert.description}</p>
@@ -334,6 +336,14 @@ const ResearchQualityPage = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
           </motion.div>
+
+          <div className="mb-10 overflow-hidden rounded-2xl shadow-xl">
+            <img
+              src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1600&q=80"
+              alt="Laboratory testing equipment"
+              className="h-72 w-full object-cover"
+            />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[

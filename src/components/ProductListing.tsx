@@ -1,31 +1,20 @@
 import React, { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Search, Filter, X } from 'lucide-react'
-import { PRODUCT_CATEGORIES, PRODUCTS, getProductsByCategory, searchProducts } from '../data/products'
+import { X } from 'lucide-react'
+import { PRODUCT_CATEGORIES, PRODUCTS } from '../data/products'
 
 const ProductListing = ({ onProductClick }) => {
   const navigate = useNavigate()
   const [selectedCategory, setSelectedCategory] = useState(null)
-  const [searchQuery, setSearchQuery] = useState('')
-  const [showFilters, setShowFilters] = useState(false)
 
-  // Filter and search logic
   const filteredProducts = useMemo(() => {
-    let result = PRODUCTS
-
-    // Apply search filter
-    if (searchQuery) {
-      result = searchProducts(searchQuery)
+    if (!selectedCategory) {
+      return PRODUCTS
     }
 
-    // Apply category filter
-    if (selectedCategory) {
-      result = result.filter(p => p.category === selectedCategory)
-    }
-
-    return result
-  }, [selectedCategory, searchQuery])
+    return PRODUCTS.filter(p => p.category === selectedCategory)
+  }, [selectedCategory])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -66,96 +55,6 @@ const ProductListing = ({ onProductClick }) => {
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
         </motion.div>
 
-        {/* Search Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-8"
-        >
-          <div className="relative max-w-2xl mx-auto">
-            <Search className="absolute left-4 top-3.5 text-gray-400" size={20} />
-            <input
-              type="text"
-              placeholder="Search products by name, benefit, or application..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-            />
-          </div>
-        </motion.div>
-
-        {/* Filter Section */}
-        <div className="mb-8">
-          {/* Filter Toggle Button - Mobile */}
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            onClick={() => setShowFilters(!showFilters)}
-            className="lg:hidden flex items-center gap-2 btn-secondary mb-4 w-full justify-center"
-          >
-            <Filter size={20} />
-            {showFilters ? 'Hide Filters' : 'Show Filters'}
-          </motion.button>
-
-          {/* Categories Filter */}
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: showFilters ? 1 : 1, height: 'auto' }}
-            transition={{ duration: 0.3 }}
-            className="lg:block"
-          >
-            <div className="flex flex-wrap gap-2 mb-6">
-              {/* All Products */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setSelectedCategory(null)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                  selectedCategory === null
-                    ? 'bg-primary text-white shadow-lg'
-                    : 'bg-white border-2 border-gray-300 text-gray-700 hover:border-primary'
-                }`}
-              >
-                All Products ({PRODUCTS.length})
-              </motion.button>
-
-              {/* Category Buttons */}
-              {PRODUCT_CATEGORIES.map((category, idx) => (
-                <motion.button
-                  key={category.id}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: idx * 0.05 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`px-4 py-2 rounded-lg font-semibold transition-all whitespace-nowrap ${
-                    selectedCategory === category.id
-                      ? 'bg-primary text-white shadow-lg'
-                      : 'bg-white border-2 border-gray-300 text-gray-700 hover:border-primary'
-                  }`}
-                >
-                  {category.name} ({getProductsByCategory(category.id).length})
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Results Count */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-gray-600 mb-8"
-        >
-          Showing <span className="font-bold text-primary">{filteredProducts.length}</span> product{filteredProducts.length !== 1 ? 's' : ''}
-          {selectedCategory && ' in selected category'}
-          {searchQuery && ` matching "${searchQuery}"`}
-        </motion.p>
-
         {/* Product Grid */}
         {filteredProducts.length > 0 ? (
           <motion.div
@@ -172,8 +71,13 @@ const ProductListing = ({ onProductClick }) => {
                 className="bg-white rounded-xl overflow-hidden card-shadow border border-gray-100 group hover:border-primary/20 transition-all"
               >
                 {/* Product Image/Icon */}
-                <div className="h-32 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform">
-                  {product.image}
+                <div className="h-40 overflow-hidden bg-gradient-to-br from-primary/5 to-secondary/5 group-hover:scale-105 transition-transform">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
 
                 {/* Product Content */}
@@ -257,7 +161,6 @@ const ProductListing = ({ onProductClick }) => {
             </p>
             <button
               onClick={() => {
-                setSearchQuery('')
                 setSelectedCategory(null)
               }}
               className="btn-primary"
