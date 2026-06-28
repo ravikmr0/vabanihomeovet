@@ -1,548 +1,323 @@
-// Product data for Vibani Homeo Vet
 export const PRODUCT_CATEGORIES = [
-  {
-    id: 'reproductive',
-    name: 'Reproductive Health',
-    description: 'Solutions for hormonal balance and reproductive wellness',
-    icon: '❤️',
-    color: 'from-pink-500 to-pink-600'
-  },
-  {
-    id: 'digestive',
-    name: 'Digestive & Liver Care',
-    description: 'Natural support for digestive and hepatic health',
-    icon: '🌱',
-    color: 'from-green-500 to-green-600'
-  },
-  {
-    id: 'respiratory',
-    name: 'Respiratory Care',
-    description: 'Solutions for respiratory health and immunity',
-    icon: '💨',
-    color: 'from-blue-500 to-blue-600'
-  },
-  {
-    id: 'urinary',
-    name: 'Urinary Care',
-    description: 'Support for urinary tract health',
-    icon: '💧',
-    color: 'from-cyan-500 to-cyan-600'
-  },
-  {
-    id: 'fever',
-    name: 'Fever & Heat Stress Management',
-    description: 'Management of fever and temperature regulation',
-    icon: '🔥',
-    color: 'from-orange-500 to-orange-600'
-  },
-  {
-    id: 'skin',
-    name: 'Skin & Disease Management',
-    description: 'Comprehensive skin health and disease support',
-    icon: '🛡️',
-    color: 'from-amber-500 to-amber-600'
-  },
-  {
-    id: 'dairy',
-    name: 'Dairy Productivity & Nutrition',
-    description: 'Enhance dairy productivity and nutritional support',
-    icon: '🐄',
-    color: 'from-indigo-500 to-indigo-600'
-  }
+  { id: 'nutrition', name: 'Nutrition & Immunity', accent: 'from-emerald-500 to-teal-500' },
+  { id: 'reproductive', name: 'Reproductive & Uterine Care', accent: 'from-fuchsia-500 to-rose-500' },
+  { id: 'digestive', name: 'Digestive & Liver Care', accent: 'from-amber-500 to-orange-500' },
+  { id: 'respiratory', name: 'Respiratory & Fever Care', accent: 'from-sky-500 to-cyan-500' },
+  { id: 'skin', name: 'Skin & Wound Care', accent: 'from-violet-500 to-indigo-500' },
+  { id: 'urinary', name: 'Urinary & Kidney Care', accent: 'from-lime-500 to-emerald-500' },
+  { id: 'dairy', name: 'Dairy Productivity', accent: 'from-rose-500 to-pink-500' },
+  { id: 'udder', name: 'Udder & Mastitis Care', accent: 'from-blue-500 to-slate-500' }
 ]
 
 export const PRODUCTS = [
-  // Reproductive Health Category
   {
     id: 1,
-    name: 'Fert-i',
-    category: 'reproductive',
-    tagline: 'For Hormonal Balance & Genital Organs',
-    shortDescription: 'Specialized formula for enhancing conception rates and maintaining reproductive health in livestock.',
-    fullDescription: 'Fert-i is a premium homeopathic formulation designed to optimize reproductive performance in cattle and other livestock. It works by promoting hormonal balance, improving sperm motility, and supporting overall reproductive system health.',
-    benefits: [
-      'Increase conception rate',
-      'Improve sperm movement',
-      'Maintain reproductive health',
-      'Hormonal balance after A.I.',
-      'Improve fertility performance'
-    ],
-    indications: [
-      'Low conception rates',
-      'Poor sperm quality',
-      'Hormonal imbalance',
-      'Post-A.I. support',
-      'Reduced fertility'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '30 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: true,
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=80',
-    price: 'Contact for pricing'
+    name: 'CAPITAL-H',
+    hindiName: 'कैपीटल-एच',
+    category: 'nutrition',
+    badge: 'Vitamin Support',
+    tagline: 'Comprehensive multivitamin for livestock and poultry',
+    shortDescription: 'A nutritional liquid feed concentrate developed to strengthen immunity, skin condition, and udder health.',
+    fullDescription: 'CAPITAL-H is a broad-spectrum vitamin and mineral supplement for cattle, poultry, and companion animals. It supports udder development, skin vitality, stress resilience, and immune performance during demanding physiological periods.',
+    benefits: ['Strengthens udder tissues and muscles', 'Supports skin shine and hair quality', 'Improves immunity and stress recovery', 'Helps maintain healthy keratin lining'],
+    indications: ['Vitamin deficiency', 'Poor body condition', 'Stress and low immunity', 'Udder development support'],
+    dosage: '20-25 ml daily for 60 days before calving in cows; 10 ml daily for bulls and lactating cattle; 3-7 ml per 100 birds for poultry.',
+    presentation: '100 ml, 250 ml, 500 ml, 1 Ltr',
+    ingredients: 'Vitamin A, D3, H, E, C, B12, nicotinamide, copper, zinc, cobalt, potassium iodide, selenium, D.L. methionine and energy support.',
+    storage: 'Store in a cool, dry place away from direct sunlight.',
+    image: '/public/images/products/capital_h_100ml.png'
   },
   {
     id: 2,
-    name: 'Utroniya',
+    name: 'Fert-i',
+    hindiName: 'फर्ट-आई',
     category: 'reproductive',
-    tagline: 'Unique Ecbolic Uterine Solution',
-    shortDescription: 'Advanced formula for uterine health, convenient delivery support, and hormone regulation.',
-    fullDescription: 'Utroniya is a comprehensive homeopathic solution designed for optimal uterine function. It supports natural delivery, regulates hormonal patterns, and aids in placenta expulsion.',
-    benefits: [
-      'Convenient delivery',
-      'Hormone regulation',
-      'Anti-abortive support',
-      'Placenta expulsion',
-      'Metritis & Pyometra support'
-    ],
-    indications: [
-      'Dystocia',
-      'Retained placenta',
-      'Uterine inertia',
-      'Metritis',
-      'Pyometra',
-      'Hormonal imbalance'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '105 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5f400f6f4?auto=format&fit=crop&w=1000&q=80'
+    badge: 'Hormonal Balance',
+    tagline: 'Support for conception, fertility and genital vitality',
+    shortDescription: 'A homeopathic veterinary solution for reproductive balance and improved genital organ function.',
+    fullDescription: 'Fert-i is designed to support hormonal balance, improve conception rates, and maintain the health of genital organs in breeding animals.',
+    benefits: ['Supports conception rate', 'Helps maintain favorable pH for sperm motility', 'Aids hormonal balance post-AI', 'Supports genital organ tone'],
+    indications: ['Low fertility', 'Post-AI recovery', 'Reproductive weakness', 'Genital organ support'],
+    dosage: '30 ml once or as directed by the veterinarian.',
+    presentation: '30 ml',
+    ingredients: 'Agnus castus, sepia, palladium, borax, apis mellifica, murex purpurea, aurum metallicum and purified water.',
+    storage: 'Store in a cool place with the bottle tightly closed.',
+    image: '/public/images/products/fert_i.png'
   },
   {
     id: 3,
-    name: 'Viba-Sept',
+    name: 'Utroniya',
+    hindiName: 'यूट्रोनिया',
     category: 'reproductive',
-    tagline: 'Aid to Uterine Swelling & Discharge',
-    shortDescription: 'Targeted relief for uterine infections and post-calving complications.',
-    fullDescription: 'Viba-Sept provides natural support for uterine infections and inflammatory conditions. Ideal for post-calving care and prevention of metritis.',
-    benefits: [
-      'Uterine infection support',
-      'Post-calving discharge management',
-      'Reduces foul-smelling discharge',
-      'Anti-inflammatory action',
-      'Promotes uterine recovery'
-    ],
-    indications: [
-      'Metritis',
-      'Uterine inflammation',
-      'Abnormal discharge',
-      'Post-calving complications',
-      'Uterine swelling'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '200 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1000&q=80'
+    badge: 'Easy Delivery Support',
+    tagline: 'Unique ecbolic uterine solution for smooth delivery',
+    shortDescription: 'A trusted uterine support remedy for convenient delivery, placental discharge and postpartum recovery.',
+    fullDescription: 'Utroniya offers supportive care for labor, uterine cleansing, postpartum discharge and routine reproductive recovery, helping animals recover more comfortably.',
+    benefits: ['Supports convenient delivery', 'Aids placental expulsion', 'Helps with metritis and pyometra', 'Supports uterine recovery'],
+    indications: ['Delayed placental discharge', 'Metritis', 'Pyometra', 'Postpartum uterine support'],
+    dosage: '5 ml three times daily or as directed by the veterinarian.',
+    presentation: '105 ml with 10 ml disposable bottle',
+    ingredients: 'Caulophyllum thalictroides, cimicifuga racemosa, cantharis, cinchona officinalis, pulsatilla nigricans, rhus toxicodendron, sepia, sabina, secale cornutum and ustilago maydis.',
+    storage: 'Keep away from direct sunlight and store in a cool place.',
+    image: '/public/images/products/utroniya.png'
   },
   {
     id: 4,
-    name: 'Viba-ABORT',
-    category: 'reproductive',
-    tagline: 'Pregnancy Maintenance Support',
-    shortDescription: 'Premium formula for threatened abortion prevention and pregnancy maintenance.',
-    fullDescription: 'Viba-ABORT is specially formulated to support healthy pregnancy maintenance and reduce abortion risk. It works by strengthening pregnancy support mechanisms and improving placental function.',
-    benefits: [
-      'Threatened abortion support',
-      'Habitual abortion prevention',
-      'Pregnancy maintenance',
-      'Gestational support',
-      'Stress-related abortion risk reduction'
-    ],
-    indications: [
-      'Threatened abortion',
-      'Habitual abortion',
-      'Weak pregnancy',
-      'Stress-related pregnancy loss',
-      'Genital infection support'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1000&q=80'
+    name: 'Viba-Skin Drops',
+    hindiName: 'वीबा-स्किन ड्रॉप्स',
+    category: 'skin',
+    badge: 'LSD & Skin Relief',
+    tagline: 'Effective care for lumpy skin disease and skin irritation',
+    shortDescription: 'A versatile skin support formula for dry skin, itching, patches, hair loss and lumpy skin disease symptoms.',
+    fullDescription: 'Viba-Skin Drops are designed for animals suffering from common skin disorders, including conditions associated with lumpy skin disease, itching and hair loss.',
+    benefits: ['Helps manage skin lesions and irritation', 'Supports recovery from dry skin conditions', 'Aids hair regrowth and skin comfort', 'Useful in LSD-associated symptoms'],
+    indications: ['Lumpy skin disease', 'Dry skin', 'Itching', 'Hair loss and patches'],
+    dosage: '30-30 drops 3-4 times daily or as directed by the veterinarian.',
+    presentation: '30 ml',
+    ingredients: 'Apis mellifica, graphites, rhus toxicodendron, thuja occidentalis, sulphur, petroleum, psorinum and excipients.',
+    storage: 'Store in a cool, dry place and keep the cap tightly closed.',
+    image: '/public/images/products/viba_skin_drops.png'
   },
   {
     id: 5,
-    name: 'U.P.C.',
-    category: 'reproductive',
-    tagline: 'Uterine Prolapse Care',
-    shortDescription: 'Specialized support for prolapse management and pelvic tissue strengthening.',
-    fullDescription: 'U.P.C. is a spray formulation designed for uterine prolapse and vaginal prolapse management. It helps strengthen pelvic tissues and promotes recovery.',
-    benefits: [
-      'Uterus prolapse support',
-      'Cervico-vaginal prolapse management',
-      'Weak pelvic tissue support',
-      'Uterus strengthening',
-      'Vaginal prolapse care'
-    ],
-    indications: [
-      'Uterine prolapse',
-      'Vaginal prolapse',
-      'Cervico-vaginal prolapse',
-      'Pelvic weakness',
-      'Post-calving complications'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 ml Spray',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1594756202469-9f4f23d86bdb?auto=format&fit=crop&w=1000&q=80'
+    name: 'Viba-Milk Pro Gel',
+    hindiName: 'वीबा-मिल्क प्रो जैल',
+    category: 'dairy',
+    badge: 'Milk Yield Support',
+    tagline: 'Oral calcium and phosphorus gel for higher milk yield',
+    shortDescription: 'A comprehensive dairy supplement formulated to support calcium, phosphorus, vitamins and energy during the periparturient period.',
+    fullDescription: 'Viba-Milk Pro Gel supports dairy animals around calving and lactation by supplying essential minerals, vitamins and herbal ingredients for vitality and milk production.',
+    benefits: ['Supports milk yield', 'Helps prevent milk fever', 'Supports uterine contraction and normal calving', 'Improves general immunity'],
+    indications: ['Milk fever', 'Low milk yield', 'Weakness around calving', 'Reduced energy and immunity'],
+    dosage: '300 gm once or as directed by the veterinarian.',
+    presentation: '300 gm',
+    ingredients: 'Calcium, phosphorus, vitamins A and D3, B12, magnesium, carbohydrates, shatavari, jivanti and pueraria mirifica.',
+    storage: 'Keep sealed and store in a dry, cool place.',
+    image: '/public/images/products/viba_milk.png'
   },
-
-  // Digestive & Liver Care Category
   {
     id: 6,
-    name: 'Viba-Liv',
+    name: 'Viba-Liv 100ml',
+    hindiName: 'वीबा-लिव 100ml',
     category: 'digestive',
-    tagline: 'The Solution for Gastric Trouble',
-    shortDescription: 'Comprehensive digestive and liver support for optimal digestive function.',
-    fullDescription: 'Viba-Liv is a premium homeopathic formulation designed to support liver function and digestive health. It aids in appetite stimulation, digestion improvement, and overall metabolic wellness.',
-    benefits: [
-      'Liver function support',
-      'Appetite stimulation',
-      'Digestion improvement',
-      'Debility management',
-      'Chronic anorexia support'
-    ],
-    indications: [
-      'Liver dysfunction',
-      'Loss of appetite',
-      'Indigestion',
-      'General debility',
-      'Chronic anorexia',
-      'Poor digestive health'
-    ],
-    dosage: 'As prescribed by veterinarian',
+    badge: 'Digestive & Liver Care',
+    tagline: 'A multipurpose remedy for digestive and liver problems',
+    shortDescription: 'Useful for anorexia, indigestion, liver dysfunction and general digestive weakness.',
+    fullDescription: 'Viba-Liv is a well-known veterinary homeopathic formula for digestive distress and liver dysfunction, helping restore appetite and improve overall comfort.',
+    benefits: ['Supports digestive comfort', 'Improves appetite and feed intake', 'Aids liver and digestive function', 'Useful in chronic anorexia'],
+    indications: ['Indigestion', 'Loss of appetite', 'Liver dysfunction', 'Weak digestion'],
+    dosage: 'Large animals 5 ml 3 to 4 times daily; small animals 2 ml 3 to 4 times daily; poultry as directed.',
     presentation: '100 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: true,
-    image: 'https://images.unsplash.com/photo-1587280413149-8ac0de946eb3?auto=format&fit=crop&w=1000&q=80'
+    ingredients: 'Chelidonium majus, nux vomica, sulphur, lycopodium clavatum, purified water and excipients.',
+    storage: 'Store in a cool place away from sunlight.',
+    image: '/public/images/products/viba_liv_100ml.png'
   },
-
-  // Respiratory Care Category
   {
     id: 7,
-    name: 'Viba-Cof',
-    category: 'respiratory',
-    tagline: 'Respiratory Support Formula',
-    shortDescription: 'Natural relief for respiratory infections and respiratory health support.',
-    fullDescription: 'Viba-Cof provides comprehensive support for respiratory health. It helps manage respiratory infections, supports immune function, and promotes clear breathing.',
-    benefits: [
-      'Respiratory infection support',
-      'Pneumonia management',
-      'Bronchitis relief',
-      'Cough & Cold support',
-      'Hemorrhagic Septicemia support'
-    ],
-    indications: [
-      'Respiratory infections',
-      'Pneumonia',
-      'Bronchitis',
-      'Persistent cough',
-      'Nasal discharge',
-      'Hemorrhagic Septicemia'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80'
+    name: 'Viba-Liv 500ml',
+    hindiName: 'वीबा-लिव 500ml',
+    category: 'digestive',
+    badge: 'Extended Support',
+    tagline: 'A larger presentation for sustained digestive support',
+    shortDescription: 'A strong formulation for recurring digestive troubles and appetite concerns in livestock.',
+    fullDescription: 'The 500 ml presentation of Viba-Liv is designed for regular use in animals needing ongoing digestive and liver support.',
+    benefits: ['Supports long-term digestive balance', 'Helps maintain appetite', 'Useful in chronic anorexia', 'Aids liver function'],
+    indications: ['Digestive weakness', 'Anorexia', 'Indigestion', 'Liver sluggishness'],
+    dosage: 'Large animals 15 ml 3 to 4 times daily; small animals 5 ml 3 to 4 times daily; poultry as directed.',
+    presentation: '500 ml',
+    ingredients: 'Chelidonium majus, nux vomica, sulphur, lycopodium clavatum, purified water and excipients.',
+    storage: 'Store in a cool, dry place with the bottle sealed.',
+    image: '/public/images/products/viba_liv_500ml.png'
   },
-
-  // Urinary Care Category
   {
     id: 8,
-    name: 'URINIL',
-    category: 'urinary',
-    tagline: 'Urinary Tract Health Support',
-    shortDescription: 'Premium formula for urinary tract infections and kidney health.',
-    fullDescription: 'URINIL is specifically formulated to support urinary tract health and kidney function. It helps manage urinary tract infections and promotes normal urinary function.',
-    benefits: [
-      'Cystitis support',
-      'Nephritis management',
-      'Hematuria relief',
-      'UTI prevention',
-      'Urinary health improvement'
-    ],
-    indications: [
-      'Cystitis',
-      'Nephritis',
-      'Hematuria',
-      'Urinary tract infections',
-      'Dysuria',
-      'Urinary congestion'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1000&q=80'
+    name: 'Viba-Sept',
+    hindiName: 'वीबा-सेप्ट',
+    category: 'udder',
+    badge: 'Septic Support',
+    tagline: 'Aiding uterine swelling, discharge and infection',
+    shortDescription: 'A targeted support formula for uterine inflammation, foul discharge and septic conditions.',
+    fullDescription: 'Viba-Sept is useful when uterine discharge is foul, putrid, yellow or reddish and when septic inflammation is present.',
+    benefits: ['Supports uterine cleanliness', 'Helps reduce swelling and discharge', 'Useful in septic conditions', 'Supports postpartum uterine recovery'],
+    indications: ['Uterine swelling', 'Foul discharge', 'Septic inflammation', 'Postpartum discharge'],
+    dosage: '5 ml three times daily or as directed by the veterinarian.',
+    presentation: '200 ml',
+    ingredients: 'Pyrogenium, pulsatilla nigricans, secale cornutum, helonias dioica, sepia and silicea.',
+    storage: 'Store in a cool place and protect from direct sunlight.',
+    image: '/public/images/products/viba_sept.png'
   },
-
-  // Fever & Heat Stress Management Category
   {
     id: 9,
-    name: 'FEVE-OFF',
-    category: 'fever',
-    tagline: 'Fever Management Solution',
-    shortDescription: 'Effective support for fever management and body temperature regulation.',
-    fullDescription: 'FEVE-OFF is designed to support the body\'s natural fever response and promote comfortable temperature regulation during febrile conditions.',
-    benefits: [
-      'Fever management',
-      'Infection resistance',
-      'Muscle pain relief',
-      'Temperature normalization',
-      'General wellness support'
-    ],
-    indications: [
-      'Fever',
-      'Infectious conditions',
-      'Muscle pain',
-      'General weakness',
-      'Temperature dysregulation'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1527153857715-3908f2bae5e8?auto=format&fit=crop&w=1000&q=80'
+    name: 'FROZEN',
+    hindiName: 'फ्रोजन',
+    category: 'respiratory',
+    badge: 'Heat Stress Relief',
+    tagline: 'Rescue remedy for heat stroke, sun stroke and panting',
+    shortDescription: 'A supportive remedy to restore comfort during heat stress, high fever and summer exhaustion.',
+    fullDescription: 'FROZEN helps normalize body temperature and supports recovery from heat stress, sun stroke and panting during hot weather.',
+    benefits: ['Helps normalize body temperature', 'Supports heat stress recovery', 'Balances minerals and electrolytes', 'Useful after fever episodes'],
+    indications: ['Heat stroke', 'Sun stroke', 'Panting', 'High fever'],
+    dosage: '5 ml 3 to 4 times daily or as directed by the veterinarian.',
+    presentation: '200 ml',
+    ingredients: 'Natrum muriaticum, gluteninum, natrum carbonicum, aconitum napellus and arsenicum album.',
+    storage: 'Keep tightly capped and away from heat.',
+    image: '/public/images/products/frozen.png'
   },
   {
     id: 10,
-    name: 'FROZEN',
-    category: 'fever',
-    tagline: 'Rescue Remedy for Heat Stroke & Sun Stroke',
-    shortDescription: 'Emergency support for heat stress, heat stroke, and sun stroke conditions.',
-    fullDescription: 'FROZEN is a specialized rescue remedy designed for immediate support during heat stroke and sun stroke emergencies. It helps regulate body temperature and supports recovery.',
-    benefits: [
-      'Heat stress management',
-      'Panting relief',
-      'Salivation control',
-      'Temperature regulation',
-      'Summer stress management'
-    ],
-    indications: [
-      'Heat stress',
-      'Heat stroke',
-      'Sun stroke',
-      'Excessive panting',
-      'Excessive salivation',
-      'Temperature dysregulation'
-    ],
-    dosage: 'As prescribed by veterinarian - emergency use',
-    presentation: '200 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1000&q=80'
+    name: 'Viba-ABORT',
+    hindiName: 'वीबा-अबोर्ट',
+    category: 'reproductive',
+    badge: 'Anti-Abortion Support',
+    tagline: 'Protecting pregnancy and reducing abortion risk',
+    shortDescription: 'A supportive formula for threatened, habitual and mycotic abortion conditions.',
+    fullDescription: 'Viba-ABORT is intended for animals facing abortion risk, false labor or placental stress, helping maintain gestational stability and comfort.',
+    benefits: ['Supports pregnancy retention', 'Reduces stress-related reproductive risk', 'Helps in threatened abortion', 'Supports uterine balance'],
+    indications: ['Threatened abortion', 'Habitual abortion', 'False labor', 'Genital infection'],
+    dosage: '5 ml 3 to 4 times daily or as directed by the veterinarian.',
+    presentation: '100 ml',
+    ingredients: 'Aletris farinosa, apis mellifica, calcarea phosphorica, caulophyllum thalictroides, hydrastis canadensis and sepia.',
+    storage: 'Store in a cool and dry place.',
+    image: '/public/images/products/viba_abort.png'
   },
-
-  // Skin & Disease Management Category
   {
     id: 11,
-    name: 'Viba-Skin Drops',
+    name: 'F.M. Two',
+    hindiName: 'एफ.एम. टू',
     category: 'skin',
-    tagline: 'For Lumpy Skin Disease (LSD)',
-    shortDescription: 'Specialized support for lumpy skin disease and skin health.',
-    fullDescription: 'Viba-Skin Drops provide targeted support for skin conditions including lumpy skin disease. It promotes skin healing and restores skin health.',
-    benefits: [
-      'Lumpy Skin Disease support',
-      'Skin irritation relief',
-      'Hair loss management',
-      'Wound healing promotion',
-      'Skin patch resolution'
-    ],
-    indications: [
-      'Lumpy Skin Disease',
-      'Skin irritation',
-      'Alopecia',
-      'Wound healing support',
-      'Skin lesions',
-      'Dermatitis'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '30 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: true,
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=80'
+    badge: 'Foot & Mouth Support',
+    tagline: 'An excellent remedy for foot and mouth disease',
+    shortDescription: 'Useful in mouth ulcers, salivation, lameness and wound healing during FMD episodes.',
+    fullDescription: 'F.M. Two is intended to support animals dealing with foot and mouth disease symptoms, including blisters, ulcers, fever and drooling.',
+    benefits: ['Supports mouth and foot lesion healing', 'Helps reduce salivation and discomfort', 'Aids immune response', 'Useful in lameness and fever episodes'],
+    indications: ['Mouth ulcers', 'Foot lesions', 'Salivation', 'FMD symptoms'],
+    dosage: '5 tablets 2 times daily or as directed by the veterinarian.',
+    presentation: '100 tablets',
+    ingredients: 'Arnica montana, calendula officinalis, pulsatilla nigricans, calcarea sulphurica, helonias dioica, secale cornutum, sepia and silicea.',
+    storage: 'Store in a cool, dry place away from sunlight.',
+    image: '/public/images/products/fm_two.png'
   },
   {
     id: 12,
-    name: 'F.M. TWO',
-    category: 'skin',
-    tagline: 'Foot & Mouth Disease Support',
-    shortDescription: 'Comprehensive support for foot and mouth disease management.',
-    fullDescription: 'F.M. TWO is a tablet formulation designed to provide support during foot and mouth disease outbreaks. It helps manage symptoms and supports immune response.',
-    benefits: [
-      'Mouth ulcer relief',
-      'Drooling management',
-      'Foot lesion support',
-      'Fever support',
-      'Gum infection relief'
-    ],
-    indications: [
-      'Foot and Mouth Disease',
-      'Mouth ulcers',
-      'Excessive drooling',
-      'Foot lesions',
-      'Fever',
-      'Gum infections'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 Tablets',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80'
+    name: 'Viba-Cof',
+    hindiName: 'वीबा-कॉफ',
+    category: 'respiratory',
+    badge: 'Respiratory Relief',
+    tagline: 'Helpful for cough, cold, pneumonia and HS conditions',
+    shortDescription: 'A respiratory support formula for upper and lower respiratory issues in livestock.',
+    fullDescription: 'Viba-Cof is useful in respiratory infections, coughing, cold, pneumonia, bronchitis and other inflammatory airway conditions.',
+    benefits: ['Supports airway comfort', 'Helps reduce nasal discharge and cough', 'Useful in HS and pneumonia cases', 'Aids recovery from respiratory stress'],
+    indications: ['Cough', 'Cold', 'Pneumonia', 'Hemorrhagic septicemia'],
+    dosage: '5-10 ml 2-4 times daily or as directed by the veterinarian.',
+    presentation: '100 ml',
+    ingredients: 'Aconitum napellus, antimonium iodatum, bryonia alba, phosphorus, pneumococcin and sulphur.',
+    storage: 'Store in a cool place and keep tightly sealed.',
+    image: '/public/images/products/viba_cof.png'
   },
-
-  // Dairy Productivity & Nutrition Category
   {
     id: 13,
-    name: 'CAPITAL-H',
-    category: 'dairy',
-    tagline: 'Comprehensive Multivitamin Supplement',
-    shortDescription: 'Premium multivitamin formulation for overall health, immunity, and dairy productivity.',
-    fullDescription: 'CAPITAL-H is our flagship comprehensive multivitamin supplement. It provides essential vitamins and minerals to support immune function, bone health, and milk production capacity.',
-    benefits: [
-      'Vitamin deficiency prevention',
-      'Immunity improvement',
-      'Strong bones & muscles',
-      'Healthy skin & coat',
-      'Improved milk holding capacity',
-      'Mastitis prevention support'
-    ],
-    indications: [
-      'Vitamin deficiency',
-      'Weak immunity',
-      'Poor bone health',
-      'Skin issues',
-      'Low milk production',
-      'Susceptibility to mastitis'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: ['100 ml', '250 ml', '500 ml', '1 Litre'],
-    ingredients: 'Comprehensive micronutrient complex',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: true,
-    image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=80',
-    price: 'Contact for pricing'
+    name: 'URINIL',
+    hindiName: 'यूरिनिल',
+    category: 'urinary',
+    badge: 'Urinary Care',
+    tagline: 'Support for urinary tract infection and red water disease',
+    shortDescription: 'A targeted support medicine for urinary irritation, cystitis and blood in urine conditions.',
+    fullDescription: 'URINIL helps support animals with urinary tract irritation, cystitis, nephritis, hematuria and general urinary discomfort.',
+    benefits: ['Supports urinary tract comfort', 'Helps reduce irritation and bleeding', 'Improves general condition', 'Supports RBC preservation'],
+    indications: ['Cystitis', 'Nephritis', 'Hematuria', 'Red water disease'],
+    dosage: '5 ml three times daily or as directed by the veterinarian.',
+    presentation: '100 ml',
+    ingredients: 'Cantharis, camphora, berberis vulgaris, equisetum hyemale, eupatorium purpureum and aconite napellus.',
+    storage: 'Store in a shaded and cool place.',
+    image: '/public/images/products/urinil.png'
   },
   {
     id: 14,
-    name: 'Viba-Milk Pro Gel',
-    category: 'dairy',
-    tagline: 'Calcium & Phosphorus Supplement',
-    shortDescription: 'Premium mineral supplement for milk fever prevention and lactation support.',
-    fullDescription: 'Viba-Milk Pro Gel is a specialized gel formulation providing optimal calcium and phosphorus balance. It prevents milk fever and supports healthy lactation.',
-    benefits: [
-      'Milk fever prevention',
-      'Milk production increase',
-      'Immunity improvement',
-      'Energy support',
-      'Post-calving nutrition'
-    ],
-    indications: [
-      'Milk fever risk',
-      'Low milk production',
-      'Weak immunity',
-      'Low energy',
-      'Post-calving recovery'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '300 gm',
-    ingredients: 'Calcium, Phosphorus, minerals and vitamins',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: false,
-    image: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1000&q=80'
+    name: 'U.P.C. Uterine Prolaps Care',
+    hindiName: 'यू.पी.सी.',
+    category: 'reproductive',
+    badge: 'Prolapse Support',
+    tagline: 'Relief from uterine and vaginal prolapse',
+    shortDescription: 'A supportive remedy for pre-partum and post-partum uterine and vaginal prolapse.',
+    fullDescription: 'U.P.C. helps strengthen pelvic ligaments and uterine muscles while supporting animals with prolapse-related discomfort.',
+    benefits: ['Supports uterine prolapse recovery', 'Strengthens ligaments and tissues', 'Improves contraction power', 'Useful in pre- and post-partum prolapse'],
+    indications: ['Uterine prolapse', 'Vaginal prolapse', 'Weak pelvic tissues', 'Reduced contraction power'],
+    dosage: 'Twice daily or as directed by the veterinarian.',
+    presentation: '100 ml with spray',
+    ingredients: 'Lilium tigrinum, podophyllum paltatum, belladonna, aloe socotrina and murex purpurea.',
+    storage: 'Keep in a cool place and protect from direct sunlight.',
+    image: '/public/images/products/upc.png'
   },
   {
     id: 15,
-    name: 'Viba-Milk',
-    category: 'dairy',
-    tagline: 'Milk Production Enhancer',
-    shortDescription: 'Tablet formulation specifically designed to enhance milk yield and quality.',
-    fullDescription: 'Viba-Milk is a premium tablet formulation designed to optimize milk production. It supports lactation, improves milk quality, and enhances overall dairy productivity.',
-    benefits: [
-      'Milk yield improvement',
-      'Lactation support',
-      'Milk quality enhancement',
-      'Dairy productivity increase',
-      'Nutritional support'
-    ],
-    indications: [
-      'Low milk production',
-      'Poor lactation',
-      'Low milk quality',
-      'Reduced dairy productivity',
-      'Nutritional deficiency'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 Tablets',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: true,
-    image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1000&q=80'
+    name: 'Fresh Approach',
+    hindiName: 'फ्रेश एप्रोच',
+    category: 'nutrition',
+    badge: 'Nature’s Way',
+    tagline: 'Modern homoeopathic veterinary philosophy in every product',
+    shortDescription: 'A brand philosophy focused on gentle, effective care for innocent and speechless animals.',
+    fullDescription: 'Fresh Approach reflects the brand’s commitment to painless, thoughtful veterinary care through innovative homeopathic practices.',
+    benefits: ['Painless administration', 'Government licensed formulation', 'Focused on ethical veterinary care', 'Trusted for dependable results'],
+    indications: ['General wellness', 'Gentle care support', 'Routine veterinary management', 'Pet and livestock comfort'],
+    dosage: 'As directed by the veterinarian or manufacturer guidance.',
+    presentation: 'As per product range',
+    ingredients: 'Homeopathic veterinary ingredients prepared under licensed formulation standards.',
+    storage: 'Store as specified on each product label.',
+    image: '/public/images/products/fresh_approach.jpeg'
   },
   {
     id: 16,
-    name: 'Viba-Must Kit',
+    name: 'FEVE-OFF',
+    hindiName: 'फीव-ऑफ',
+    category: 'respiratory',
+    badge: 'Fever Control',
+    tagline: 'To normalize body temperature and relieve fever discomfort',
+    shortDescription: 'A supportive remedy for fever, muscular pain and nervous irritation.',
+    fullDescription: 'FEVE-OFF helps reduce the severity and duration of fever while supporting comfort during infections and inflammation.',
+    benefits: ['Supports fever reduction', 'Relieves muscular and nervous pain', 'Shortens fever span', 'Builds resistance during infection'],
+    indications: ['Fever', 'Muscular pain', 'Nervous irritation', 'Infection support'],
+    dosage: '5 ml three times daily or as directed by the veterinarian.',
+    presentation: '100 ml',
+    ingredients: 'Bryonia alba, aconitum napellus, rhus toxicodendron, baptisia tinctoria and belladonna.',
+    storage: 'Store in a cool, dry place away from sunlight.',
+    image: '/public/images/products/feve_off.png'
+  },
+  {
+    id: 17,
+    name: 'Viba-Milk',
+    hindiName: 'वीबा-मिल्क',
     category: 'dairy',
-    tagline: 'Mastitis Management Kit',
-    shortDescription: 'Complete kit for acute and chronic mastitis management.',
-    fullDescription: 'Viba-Must Kit is a comprehensive solution for mastitis management. It combines tablets and oral solution to provide comprehensive support for mastitis treatment.',
-    benefits: [
-      'Acute mastitis relief',
-      'Chronic mastitis support',
-      'Swollen udder management',
-      'Blood in milk resolution',
-      'Milk clot management'
-    ],
-    indications: [
-      'Acute mastitis',
-      'Chronic mastitis',
-      'Udder swelling',
-      'Hematuria (blood in milk)',
-      'Udder pain',
-      'Mastitis recurrence'
-    ],
-    dosage: 'As prescribed by veterinarian',
-    presentation: '100 Tablets + 100 ml',
-    ingredients: 'Natural homeopathic ingredients',
-    storage: 'Keep in cool, dry place away from direct sunlight',
-    featured: true,
-    image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80'
+    badge: 'Natural Milk Booster',
+    tagline: 'An excellent milk increase solution in a natural way',
+    shortDescription: 'A homoeopathic veterinary formula to support lactation quality and milk production naturally.',
+    fullDescription: 'Viba-Milk encourages maximal lactation support, better milk quality and improved yield using a natural approach that supports the animal’s recovery strength.',
+    benefits: ['Supports milk quantity', 'Improves milk quality', 'Helps restore milk after illness', 'Economical and easy to use'],
+    indications: ['Low milk yield', 'Weakness after illness', 'Post-calving milk support', 'Lactation improvement'],
+    dosage: '5 tablets 2 times daily or as directed by the veterinarian.',
+    presentation: '100 tablets',
+    ingredients: 'Alfalfa, calcarea carbonica, phosphorus, lecithin, magnesium phosphoricum, carica papaya and more.',
+    storage: 'Keep in a dry and cool environment.',
+    image: '/public/images/products/viba_milk.png'
+  },
+  {
+    id: 18,
+    name: 'Viba-Must Kit',
+    hindiName: 'वीबा-मस्ट किट',
+    category: 'udder',
+    badge: 'Mastitis Care',
+    tagline: 'Swelling, fibrosis and pain relief for mastitis',
+    shortDescription: 'A complete kit for acute and chronic mastitis, hard udder, bloody milk and inflammation.',
+    fullDescription: 'Viba-Must Kit combines tablet and liquid support for mastitis, udder hardness, blood or pus in milk and tissue fibrosis.',
+    benefits: ['Helps reduce udder swelling', 'Supports mastitis recovery', 'Useful in bloody or flaky milk', 'Aids tissue comfort'],
+    indications: ['Acute mastitis', 'Chronic mastitis', 'Bloody milk', 'Udder fibrosis'],
+    dosage: '5 tablets 2 times daily and 5 ml liquid 2 times daily or as directed by the veterinarian.',
+    presentation: '100 tablets + 100 ml liquid',
+    ingredients: 'Ferrum phosphoricum, calcarea iodata, phytolacca, sulphur, naja tripudians, scrophularia nodosa and conium maculatum.',
+    storage: 'Store in a cool place and keep away from direct sunlight.',
+    image: '/public/images/products/viba_must_kit.png'
   }
 ]
 
-export const FEATURED_PRODUCTS = PRODUCTS.filter(p => p.featured)
+export const getProductById = (id: number) => PRODUCTS.find((product) => product.id === id)
 
-export const getProductsByCategory = (categoryId) => {
-  return PRODUCTS.filter(p => p.category === categoryId)
-}
-
-export const getProductById = (id) => {
-  return PRODUCTS.find(p => p.id === id)
-}
-
-export const searchProducts = (query) => {
-  const lowerQuery = query.toLowerCase()
-  return PRODUCTS.filter(p =>
-    p.name.toLowerCase().includes(lowerQuery) ||
-    p.tagline.toLowerCase().includes(lowerQuery) ||
-    p.shortDescription.toLowerCase().includes(lowerQuery) ||
-    p.benefits.some(b => b.toLowerCase().includes(lowerQuery))
-  )
-}
+export const getProductsByCategory = (category: string) => PRODUCTS.filter((product) => product.category === category)

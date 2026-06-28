@@ -6,7 +6,7 @@ import { Users } from 'lucide-react'
 const WhyHomeopathyPage = () => {
   const principles = [
     {
-      image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80',
+      image: 'https://cdn.sanity.io/images/n6vy78g9/production/1856406139af3a9de3437d14fd0d3eaf493e5932-1920x1080.jpg',
       title: 'Natural Healing',
       description: 'Harnesses the body\'s natural healing mechanisms without synthetic chemicals',
       details: 'Uses only natural ingredients from plants, minerals, and animal sources to stimulate the body\'s own immune response.'
@@ -183,7 +183,7 @@ const WhyHomeopathyPage = () => {
       {/* Hero Image */}
       <section className="relative h-96 overflow-hidden">
         <img
-          src="https://plus.unsplash.com/premium_photo-1782324020307-73de1742160e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzOXx8fGVufDB8fHx8fA%3D%3D"
+          src="/images/heroimages/complete_product_range.png"
           alt="Natural animal wellness"
           className="w-full h-full object-cover"
         />

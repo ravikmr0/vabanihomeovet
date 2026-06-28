@@ -11,13 +11,13 @@ import Industries from './components/Industries'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import ProductListing from './components/ProductListing'
 import ProductDetail from './components/ProductDetail'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
 import WhyHomeopathyPage from './pages/WhyHomeopathyPage'
 import ResearchQualityPage from './pages/ResearchQualityPage'
 import ContactPage from './pages/ContactPage'
+import ProductsPage from './pages/productsPage'
 
 function AppContent() {
   const [scrollY, setScrollY] = useState(0)
@@ -76,7 +76,7 @@ function AppContent() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={
           <main className="font-inter">
-            <ProductListing onProductClick={handleViewProduct} />
+            <ProductsPage onProductClick={handleViewProduct} />
           </main>
         } />
         <Route path="/product/:id" element={

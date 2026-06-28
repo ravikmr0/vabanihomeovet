@@ -98,7 +98,7 @@ const About = () => {
             className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_70px_-30px_rgba(15,23,42,0.35)]"
           >
             <img
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop"
+              src="/public/images/about.png"
               alt="Professional veterinary care"
               className="h-full w-full object-cover"
             />

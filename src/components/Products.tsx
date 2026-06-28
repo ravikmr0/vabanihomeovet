@@ -1,142 +1,121 @@
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { PRODUCTS } from '../data/products'
 
-const Products = ({ onProductClick }) => {
-  const categories = [
-    { id: 1, name: 'Reproductive Health' },
-    { id: 2, name: 'Digestive & Liver Care' },
-    { id: 3, name: 'Respiratory Care' },
-    { id: 4, name: 'Urinary Care' },
-    { id: 5, name: 'Fever & Heat Stress Management' },
-    { id: 6, name: 'Skin & Disease Management' },
-    { id: 7, name: 'Dairy Productivity & Nutrition' }
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 }
-    }
-  }
-
+const Products = ({ onViewAllProducts }) => {
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const goToNext = () => {
-    setActiveIndex((prev) => (prev + 1) % categories.length)
+  useEffect(() => {
+    const slideInterval = window.setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % PRODUCTS.length)
+    }, 4200)
+
+    return () => window.clearInterval(slideInterval)
+  }, [])
+
+  const visibleProducts = useMemo(() => {
+    const nextProducts = []
+    for (let i = 0; i < 3; i += 1) {
+      nextProducts.push(PRODUCTS[(activeIndex + i) % PRODUCTS.length])
+    }
+    return nextProducts
+  }, [activeIndex])
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + PRODUCTS.length) % PRODUCTS.length)
   }
 
-  const goToPrev = () => {
-    setActiveIndex((prev) => (prev - 1 + categories.length) % categories.length)
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % PRODUCTS.length)
   }
 
   return (
-    <section id="products" className="section-spacing bg-gradient-to-b from-light to-white">
+    <section id="products" className="section-spacing bg-gradient-to-b from-slate-50 via-white to-emerald-50">
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
-            Product Categories
+        <div className="text-center mb-10">
+          <p className="text-sm font-semibold uppercase tracking-[0.32em] text-emerald-700 mb-4">Premium product carousel</p>
+          <h2 className="text-4xl font-bold text-dark md:text-5xl leading-tight">
+            Discover our best-selling veterinary formulas
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-4">
-            Comprehensive range of homeopathic solutions tailored for every animal healthcare need
+          <p className="mx-auto mt-4 max-w-2xl text-base text-slate-600 sm:text-lg">
+            Browse an elegant auto-sliding product gallery, designed for clear product discovery and effortless browsing.
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white/80 p-3 shadow-sm sm:p-4">
-            <motion.div
-              className="flex transition-transform duration-500 ease-out"
-              animate={{ x: `-${activeIndex * 100}%` }}
+        <div className="relative mx-auto max-w-[1480px] overflow-hidden rounded-[2rem] bg-white/90 shadow-[0_30px_90px_-40px_rgba(15,23,42,0.12)]">
+          <div className="absolute left-2 top-1/2 z-30 -translate-y-1/2 sm:left-4">
+            <button
+              type="button"
+              onClick={handlePrev}
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-700 shadow-lg shadow-slate-200/40 transition hover:bg-white hover:text-emerald-700"
+              aria-label="Previous slide"
             >
-              {categories.map((category) => (
-                <div key={category.id} className="w-full flex-shrink-0 px-1 sm:px-2">
-                  <motion.div
-                    variants={itemVariants}
-                    whileHover={{ y: -4, scale: 1.01 }}
-                    className="flex min-h-[140px] items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-teal-50 via-white to-slate-50 p-6 text-center shadow-sm"
-                  >
-                    <div>
-                      <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                        {category.id}
-                      </div>
-                      <h3 className="text-lg font-semibold text-dark">{category.name}</h3>
+              <ChevronLeft size={20} />
+            </button>
+          </div>
+
+          <div className="overflow-hidden px-1 py-4 sm:px-4">
+            <motion.div className="flex gap-6 transition-transform duration-700 ease-out">
+              {visibleProducts.map((product) => (
+                <motion.article
+                  key={product.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55 }}
+                  className="min-w-[92%] sm:min-w-[45%] lg:min-w-[31%] overflow-hidden rounded-[1.75rem] bg-white shadow-[0_24px_80px_-30px_rgba(15,23,42,0.12)]"
+                >
+                  <div className="relative aspect-[3/2] overflow-hidden rounded-t-[1.75rem] bg-slate-100">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="h-full w-full object-contain p-4 transition duration-500 hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-4 text-white">
+                      <p className="text-xs uppercase tracking-[0.24em] text-emerald-200">
+                        {product.category.replace(/\b\w/g, (char) => char.toUpperCase())}
+                      </p>
+                      <h3 className="mt-2 text-2xl font-bold leading-tight">{product.name}</h3>
                     </div>
-                  </motion.div>
-                </div>
+                  </div>
+
+                  <div className="flex flex-1 flex-col space-y-4 p-6">
+                    <p className="text-sm font-semibold text-emerald-700">{product.hindiName}</p>
+                    <p className="text-base font-semibold text-dark">{product.tagline}</p>
+                    <p className="text-sm leading-6 text-slate-600 line-clamp-2">{product.shortDescription}</p>
+                    <div className="flex flex-wrap items-center gap-2 pt-2">
+                      <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                        {product.presentation}
+                      </span>
+                    </div>
+                  </div>
+                </motion.article>
               ))}
             </motion.div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center justify-center gap-2 sm:justify-start">
-              {categories.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`h-2.5 rounded-full transition-all ${idx === activeIndex ? 'w-8 bg-primary' : 'w-2.5 bg-slate-300'}`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-
-            <div className="flex items-center justify-center gap-3 sm:justify-end">
-              <button
-                onClick={goToPrev}
-                className="rounded-full border border-slate-200 bg-white p-3 text-dark shadow-sm transition hover:border-primary hover:text-primary"
-                aria-label="Previous category"
-              >
-                <ArrowLeft size={18} />
-              </button>
-              <button
-                onClick={goToNext}
-                className="rounded-full border border-slate-200 bg-white p-3 text-dark shadow-sm transition hover:border-primary hover:text-primary"
-                aria-label="Next category"
-              >
-                <ArrowRight size={18} />
-              </button>
-            </div>
+          <div className="absolute right-2 top-1/2 z-30 -translate-y-1/2 sm:right-4">
+            <button
+              type="button"
+              onClick={handleNext}
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-700 shadow-lg shadow-slate-200/40 transition hover:bg-white hover:text-emerald-700"
+              aria-label="Next slide"
+            >
+              <ChevronRight size={20} />
+            </button>
           </div>
-        </motion.div>
+        </div>
 
-        {/* View All Products CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <a href="#products-catalog" className="btn-primary inline-flex items-center gap-2">
-            View Complete Product Catalog
+        <div className="mt-10 text-center">
+          <button
+            onClick={onViewAllProducts}
+            className="inline-flex items-center gap-3 rounded-full bg-emerald-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-700"
+          >
+            View all 18 products
             <ArrowRight size={18} />
-          </a>
-        </motion.div>
+          </button>
+        </div>
       </div>
     </section>
   )

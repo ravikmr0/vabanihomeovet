@@ -114,7 +114,7 @@ const AboutPage = () => {
               className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop"
+                src="/public/images/about.png"
                 alt="Professional veterinary team"
                 className="w-full h-full object-cover"
               />

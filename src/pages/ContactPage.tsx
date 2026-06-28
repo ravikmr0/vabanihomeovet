@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { Send, CheckCircle } from 'lucide-react'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -31,36 +30,6 @@ const ContactPage = () => {
       setSubmitted(false)
     }, 3000)
   }
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: 'Phone',
-      details: [
-        { text: '+91 7906410606', href: 'tel:+917906410606' },
-        { text: 'Mon-Fri: 9AM-6PM' }
-      ]
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      details: [
-        { text: 'info@vibanihomeovet.com', href: 'mailto:info@vibanihomeovet.com' }
-      ]
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      details: [
-        { text: 'Vibani Homeo Vet., Bajna Cut, Yamuna Expressway, MaharamGarhi, Bajna, Mathura - 281201, U.P., India' }
-      ]
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: ['Mon-Fri: 9:00 AM - 6:00 PM', 'Sat: 10:00 AM - 4:00 PM']
-    }
-  ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -103,96 +72,47 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact Cards */}
-      <section className="section-spacing">
+      {/* Contact Form */}
+      <section className="section-spacing bg-slate-50">
         <div className="container-custom px-4 md:px-8">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="mx-auto max-w-3xl"
           >
-            {contactInfo.map((info, idx) => {
-              const Icon = info.icon
-              return (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                    <Icon className="text-primary" size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold text-dark mb-3">{info.title}</h3>
-                  <div className="space-y-1">
-                    {info.details.map((detail, i) => {
-                      if (typeof detail === 'string') {
-                        return (
-                          <p key={i} className="text-gray-600 text-sm">
-                            {detail}
-                          </p>
-                        )
-                      }
-
-                      return (
-                        <a
-                          key={i}
-                          href={detail.href}
-                          className="block text-sm text-gray-600 transition-colors hover:text-primary"
-                        >
-                          {detail.text}
-                        </a>
-                      )
-                    })}
-                  </div>
-                </motion.div>
-              )
-            })}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Main Contact Section */}
-      <section className="section-spacing bg-gradient-to-b from-emerald-50/70 via-white to-slate-50">
-        <div className="container-custom px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-white p-8 md:p-10 rounded-[28px] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.18)] border border-emerald-100"
-            >
-              <div className="mb-8">
-                <div className="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-700 mb-4">
+            <div className="bg-white p-6 md:p-8 rounded-[28px] shadow-[0_24px_60px_-24px_rgba(15,23,42,0.18)] border border-slate-200">
+              <div className="mb-6">
+                <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary mb-4">
                   Quick Response
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-dark mb-2">Send us a Message</h2>
-                <p className="text-gray-600">We typically respond within 24 hours with the support you need.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">Send us a Message</h2>
+                <p className="text-slate-600 max-w-2xl">
+                  Reach out for product details, pricing, or partnership support.
+                </p>
               </div>
 
               {submitted ? (
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center py-12"
+                  className="flex flex-col items-center justify-center py-10"
                 >
-                  <div className="inline-flex p-4 bg-green-100 rounded-full mb-4">
-                    <CheckCircle className="text-green-600" size={48} />
+                  <div className="inline-flex p-3 bg-green-100 rounded-full mb-4">
+                    <CheckCircle className="text-green-600" size={40} />
                   </div>
-                  <h3 className="text-xl font-bold text-dark mb-2">Message Sent!</h3>
-                  <p className="text-gray-600 text-center">
-                    Thank you for contacting us. We'll get back to you soon.
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Message Sent!</h3>
+                  <p className="text-slate-600 text-center max-w-md">
+                    Thank you for contacting us — we’ll reply back soon.
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold text-dark mb-2">
-                        Full Name *
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Full Name
                       </label>
                       <input
                         type="text"
@@ -200,13 +120,13 @@ const ContactPage = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
-                        placeholder="Your name"
+                        className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-semibold text-dark mb-2">
-                        Email Address *
+                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        Email Address
                       </label>
                       <input
                         type="email"
@@ -214,14 +134,14 @@ const ContactPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
-                        placeholder="your@email.com"
+                        className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        placeholder="you@example.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-dark mb-2">
+                    <label className="block text-sm font-semibold text-slate-700 mb-2">
                       Phone Number
                     </label>
                     <input
@@ -229,21 +149,21 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
-                      placeholder="+91-XXXX-XXXX-XXX"
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                      placeholder="+91 63950 07309"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-dark mb-2">
-                      Subject *
+                    <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      Subject
                     </label>
                     <select
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                     >
                       <option value="">Select a subject</option>
                       <option value="product-inquiry">Product Inquiry</option>
@@ -255,8 +175,8 @@ const ContactPage = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-dark mb-2">
-                      Message *
+                    <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      Message
                     </label>
                     <textarea
                       name="message"
@@ -264,65 +184,40 @@ const ContactPage = () => {
                       onChange={handleChange}
                       required
                       rows="5"
-                      className="w-full px-4 py-3 border border-gray-200 rounded-xl bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all resize-none"
-                      placeholder="Your message here..."
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 shadow-sm transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none"
+                      placeholder="Tell us how we can help you..."
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="btn-primary w-full flex items-center justify-center gap-2 rounded-xl py-3.5 text-base shadow-[0_12px_30px_-12px_rgba(16,185,129,0.7)]"
+                    className="w-full rounded-2xl bg-primary px-5 py-3 text-base font-semibold text-white shadow-[0_14px_30px_-18px_rgba(16,185,129,0.9)] transition hover:bg-emerald-600"
                   >
-                    <Send size={20} />
-                    Send Message
+                    <span className="inline-flex items-center justify-center gap-2">
+                      <Send size={18} />
+                      Send Message
+                    </span>
                   </button>
                 </form>
               )}
-            </motion.div>
 
-            {/* Contact Information & Map */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              {/* Map */}
-              <div className="relative h-80 rounded-[28px] overflow-hidden shadow-[0_20px_60px_-20px_rgba(0,0,0,0.25)] border border-slate-200">
-                <iframe
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.5693696844593!2d72.5216652!3d23.0225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84b7e1f1f1f1%3A0x1f1f1f1f1f1f1f1f!2sAhmedabad%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sus!4v1234567890"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                ></iframe>
+              <div className="mt-8 grid gap-3 sm:grid-cols-3 text-sm text-slate-600">
+                <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
+                  <h3 className="font-semibold text-slate-900 mb-2">Phone</h3>
+                  <a href="tel:+917906410606" className="block hover:text-primary">+91 7906410606</a>
+                  <a href="tel:+916395007309" className="block hover:text-primary">+91 6395007309</a>
+                </div>
+                <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
+                  <h3 className="font-semibold text-slate-900 mb-2">Email</h3>
+                  <a href="mailto:info@vibanihomeovet.com" className="block hover:text-primary">info@vibanihomeovet.com</a>
+                </div>
+                <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
+                  <h3 className="font-semibold text-slate-900 mb-2">Address</h3>
+                  <p className="leading-6">Bajna Cut, Yamuna Expressway, Bajna, Mathura - 281201</p>
+                </div>
               </div>
-
-              {/* Additional Info */}
-              <div className="bg-white p-8 rounded-[24px] shadow-[0_20px_60px_-20px_rgba(0,0,0,0.16)] border border-slate-100">
-                <h3 className="text-2xl font-bold text-dark mb-6">Why Contact Us?</h3>
-                <ul className="space-y-4">
-                  {[
-                    'Get expert guidance on product selection',
-                    'Become a dealer or distributor partner',
-                    'Request bulk orders and quotes',
-                    'Join our loyalty program',
-                    'Schedule a product demonstration'
-                  ].map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle className="text-primary flex-shrink-0 mt-0.5" size={20} />
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

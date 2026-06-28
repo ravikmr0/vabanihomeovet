@@ -25,7 +25,7 @@ const slides: Slide[] = [
       { value: '1K+', label: 'Active users' },
       { value: '99%', label: 'Client satisfaction' }
     ],
-    image: 'https://images.unsplash.com/photo-1782117623103-8cc07a38afe4?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+    image: '/images/heroimages/veterinary_wellness.png'
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const slides: Slide[] = [
     title: 'Targeted solutions for every stage of animal health.',
     description: 'From digestive support to respiratory and skin care, our range is designed for practical results.',
     bullets: ['Reproductive support', 'Digestive care', 'Respiratory relief'],
-    image: 'https://images.unsplash.com/photo-1782116946694-4f0ce45f09a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D'
+    image: '/images/heroimages/complete_product_range.png'
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const slides: Slide[] = [
     title: 'Simple, safe, and dependable support for daily care.',
     description: 'Gentle formulations backed by expert guidance and trusted by professionals across the field.',
     bullets: ['Natural ingredients', 'Expert veterinary input', 'Reliable quality'],
-    image: 'https://images.unsplash.com/photo-1782145695535-a1510cfc555d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNnx8fGVufDB8fHx8fA%3D%3D'
+    image: '/images/heroimages/why_professionals.png'
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const slides: Slide[] = [
     title: 'Expert support that goes beyond the product itself.',
     description: 'Consultation, education, and dependable delivery designed to help farms and practices thrive.',
     bullets: ['Consultation services', 'Training programs', 'Fast delivery'],
-    image: 'https://images.unsplash.com/photo-1782177386774-b1a0433cd8b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMHx8fGVufDB8fHx8fA%3D%3D'
+    image: '/images/heroimages/guidance.png'
   }
 ]
 
@@ -103,9 +103,9 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
             className="absolute inset-0"
           >
             <img src={slide.image} alt={slide.title} className="h-full w-full object-cover object-center" />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-900/50 to-slate-950/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/20 via-slate-950/10 to-transparent" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.16),_transparent_35%)]" />
-            <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-slate-950/80 via-slate-950/50 to-transparent" />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -131,19 +131,19 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
         </button>
       </div>
 
-      <div className="relative z-10 flex h-full w-full items-end">
-        <div className="w-full px-4 pb-24 pt-20 sm:px-6 sm:pb-28 lg:px-8 lg:pb-32">
-          <div className="max-w-3xl rounded-[1.75rem] border border-white/20 bg-slate-950/55 p-5 shadow-2xl backdrop-blur md:p-8 lg:p-10">
+      <div className="relative z-10 flex h-full w-full items-end justify-start">
+        <div className="w-full max-w-3xl px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8">
+          <div className="p-5 md:p-8 lg:p-10">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">{slide.eyebrow}</p>
             <h1 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-6xl">
               {slide.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-200 sm:text-base">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-100 sm:text-base">
               {slide.description}
             </p>
             <ul className="mt-5 flex flex-wrap gap-2 sm:gap-3">
               {slide.bullets.map((bullet) => (
-                <li key={bullet} className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-sm text-slate-100">
+                <li key={bullet} className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-sm text-white">
                   {bullet}
                 </li>
               ))}
