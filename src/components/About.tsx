@@ -38,7 +38,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-12 text-center"
+          className="mb-8 text-center"
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-primary">About us</p>
           <h2 className="mb-4 text-4xl font-bold text-dark md:text-5xl">
@@ -50,13 +50,13 @@ const About = () => {
           <div className="mx-auto mt-6 h-1 w-20 bg-gradient-to-r from-primary to-secondary"></div>
         </motion.div>
 
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4"
           >
             <div className="soft-card p-8 sm:p-10">
               <div className="mb-4 inline-flex rounded-full bg-primary/10 p-3 text-primary">
@@ -98,7 +98,7 @@ const About = () => {
             className="relative min-h-[420px] overflow-hidden rounded-[2rem] border border-slate-200 shadow-[0_30px_70px_-30px_rgba(15,23,42,0.35)]"
           >
             <img
-              src="/public/images/about.png"
+              src="/images/about.png"
               alt="Professional veterinary care"
               className="h-full w-full object-cover"
             />
@@ -115,3 +115,4 @@ const About = () => {
 }
 
 export default About
+

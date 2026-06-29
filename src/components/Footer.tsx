@@ -34,7 +34,7 @@ const Footer = ({ onScrollTop }) => {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
       <div className="section-spacing">
         <div className="container-custom">
-          <div className="mb-10 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1.2fr_0.6fr_0.6fr_0.7fr]">
+          <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-[1.2fr_0.6fr_0.6fr_0.7fr]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

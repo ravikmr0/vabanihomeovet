@@ -64,8 +64,8 @@ iframe {
   @apply inline-flex items-center justify-center rounded-full border border-primary/20 bg-white px-6 py-3 font-semibold text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-white;
 }
 
-..section-spacing {
-  @apply px-3 py-16 sm:px-6 sm:py-20 lg:px-8;
+.section-spacing {
+  @apply px-3 py-12 sm:px-6 sm:py-14 lg:px-8;
 }
 
 .container-custom {

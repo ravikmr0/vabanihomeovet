@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Search, Sparkles, ArrowRight, Stethoscope, ShieldCheck } from 'lucide-react'
+import { Search, Sparkles, ArrowRight, Stethoscope, ShieldCheck, CheckCircle, AlertCircle } from 'lucide-react'
 import { PRODUCT_CATEGORIES, PRODUCTS } from '../data/products'
 
 const ProductListing = ({ onProductClick }) => {
@@ -10,27 +10,118 @@ const ProductListing = ({ onProductClick }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isQuoteOpen, setIsQuoteOpen] = useState(false)
   const [selectedProduct, setSelectedProduct] = useState(null)
-  const [contactForm, setContactForm] = useState({ fullName: '', phone: '', email: '' })
-  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [contactForm, setContactForm] = useState({ name: '', email: '', phone: '', company: '', subject: '', message: '' })
+  const [formErrors, setFormErrors] = useState({ name: '', email: '', phone: '', company: '', subject: '', message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [feedbackMessage, setFeedbackMessage] = useState('')
+
+  const initialErrors = { name: '', email: '', phone: '', company: '', subject: '', message: '' }
 
   const openQuoteModal = (product) => {
     setSelectedProduct(product)
-    setContactForm({ fullName: '', phone: '', email: '' })
-    setFormSubmitted(false)
+    setContactForm({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      subject: product ? `Quote request for ${product.name}` : '',
+      message: product ? `I would like to know more about ${product.name}.` : ''
+    })
+    setFormErrors(initialErrors)
+    setFeedbackMessage('')
+    setSubmissionStatus('idle')
+    setIsSubmitting(false)
     setIsQuoteOpen(true)
   }
 
   const closeQuoteModal = () => {
     setIsQuoteOpen(false)
+    setFeedbackMessage('')
+    setSubmissionStatus('idle')
   }
 
   const handleFormChange = (field, value) => {
     setContactForm((prev) => ({ ...prev, [field]: value }))
+    setFormErrors((prev) => ({ ...prev, [field]: '' }))
   }
 
-  const handleFormSubmit = (event) => {
+  const validateContactForm = () => {
+    const nextErrors = { ...initialErrors }
+    const trimmedName = contactForm.name.trim()
+    const trimmedEmail = contactForm.email.trim()
+    const trimmedPhone = contactForm.phone.trim()
+    const trimmedSubject = contactForm.subject.trim()
+    const trimmedMessage = contactForm.message.trim()
+
+    if (!trimmedName) nextErrors.name = 'Please enter your full name.'
+    if (!trimmedEmail) nextErrors.email = 'Please enter your email address.'
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) nextErrors.email = 'Please enter a valid email address.'
+    if (!trimmedPhone) nextErrors.phone = 'Please enter your phone number.'
+    else if (!/^[+\d\s().-]{7,}$/.test(trimmedPhone)) nextErrors.phone = 'Please enter a valid phone number.'
+    if (!trimmedSubject) nextErrors.subject = 'Please add a subject.'
+    if (!trimmedMessage) nextErrors.message = 'Please describe your interest.'
+    else if (trimmedMessage.length < 10) nextErrors.message = 'Please add a little more detail.'
+
+    setFormErrors(nextErrors)
+    return nextErrors
+  }
+
+  const handleFormSubmit = async (event) => {
     event.preventDefault()
-    setFormSubmitted(true)
+
+    const nextErrors = validateContactForm()
+    const hasErrors = Object.values(nextErrors).some(Boolean)
+
+    if (hasErrors) {
+      setSubmissionStatus('error')
+      setFeedbackMessage('Please correct the highlighted fields and try again.')
+      return
+    }
+
+    if (isSubmitting) return
+
+    setIsSubmitting(true)
+    setSubmissionStatus('idle')
+    setFeedbackMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...contactForm,
+          subject: contactForm.subject || `Quote request for ${selectedProduct?.name || 'our products'}`,
+          message: contactForm.message || `I am interested in ${selectedProduct?.name || 'your products'}.`
+        })
+      })
+
+      const result = await response.json()
+
+      if (response.ok && result.success) {
+        setContactForm({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          subject: selectedProduct ? `Quote request for ${selectedProduct.name}` : '',
+          message: selectedProduct ? `I would like to know more about ${selectedProduct.name}.` : ''
+        })
+        setFormErrors(initialErrors)
+        setSubmissionStatus('success')
+        setFeedbackMessage(result.message || 'Your query has been submitted successfully.')
+      } else {
+        setSubmissionStatus('error')
+        setFeedbackMessage(result.message || 'Unable to submit your query. Please try again.')
+      }
+    } catch (error) {
+      setSubmissionStatus('error')
+      setFeedbackMessage('Unable to submit your query. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleViewDetails = (product) => {
@@ -77,7 +168,7 @@ const ProductListing = ({ onProductClick }) => {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-emerald-50 pt-28 pb-20">
+    <section className="bg-gradient-to-b from-slate-50 via-white to-emerald-50 py-12">
       <div className="container-custom px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -85,7 +176,7 @@ const ProductListing = ({ onProductClick }) => {
           transition={{ duration: 0.6 }}
           className="rounded-[2rem] border border-emerald-100 bg-white/85 p-6 shadow-[0_25px_80px_-30px_rgba(15,118,110,0.35)] backdrop-blur-xl md:p-10"
         >
-          <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+          <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div>
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">
                 <Sparkles size={16} />
@@ -278,16 +369,23 @@ const ProductListing = ({ onProductClick }) => {
             </div>
 
             <form onSubmit={handleFormSubmit} className="space-y-5">
+              {feedbackMessage ? (
+                <div className={`flex items-start gap-3 rounded-2xl border px-4 py-3 text-sm ${submissionStatus === 'success' ? 'border-emerald-200 bg-emerald-50 text-emerald-700' : 'border-rose-200 bg-rose-50 text-rose-700'}`}>
+                  {submissionStatus === 'success' ? <CheckCircle className="mt-0.5 flex-shrink-0" size={18} /> : <AlertCircle className="mt-0.5 flex-shrink-0" size={18} />}
+                  <span>{feedbackMessage}</span>
+                </div>
+              ) : null}
+
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="space-y-2 text-sm font-medium text-slate-700">
                   Full Name
                   <input
                     type="text"
-                    value={contactForm.fullName}
-                    onChange={(event) => handleFormChange('fullName', event.target.value)}
-                    required
+                    value={contactForm.name}
+                    onChange={(event) => handleFormChange('name', event.target.value)}
                     className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                   />
+                  {formErrors.name ? <p className="text-sm text-rose-600">{formErrors.name}</p> : null}
                 </label>
                 <label className="space-y-2 text-sm font-medium text-slate-700">
                   Phone
@@ -295,35 +393,66 @@ const ProductListing = ({ onProductClick }) => {
                     type="tel"
                     value={contactForm.phone}
                     onChange={(event) => handleFormChange('phone', event.target.value)}
-                    required
                     className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                   />
+                  {formErrors.phone ? <p className="text-sm text-rose-600">{formErrors.phone}</p> : null}
+                </label>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <label className="space-y-2 text-sm font-medium text-slate-700">
+                  Email
+                  <input
+                    type="email"
+                    value={contactForm.email}
+                    onChange={(event) => handleFormChange('email', event.target.value)}
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                  />
+                  {formErrors.email ? <p className="text-sm text-rose-600">{formErrors.email}</p> : null}
+                </label>
+                <label className="space-y-2 text-sm font-medium text-slate-700">
+                  Company / Farm
+                  <input
+                    type="text"
+                    value={contactForm.company}
+                    onChange={(event) => handleFormChange('company', event.target.value)}
+                    className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                  />
+                  {formErrors.company ? <p className="text-sm text-rose-600">{formErrors.company}</p> : null}
                 </label>
               </div>
 
               <label className="space-y-2 text-sm font-medium text-slate-700">
-                Email
+                Subject
                 <input
-                  type="email"
-                  value={contactForm.email}
-                  onChange={(event) => handleFormChange('email', event.target.value)}
-                  required
+                  type="text"
+                  value={contactForm.subject}
+                  onChange={(event) => handleFormChange('subject', event.target.value)}
                   className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                  placeholder="Quote request or product enquiry"
                 />
+                {formErrors.subject ? <p className="text-sm text-rose-600">{formErrors.subject}</p> : null}
+              </label>
+
+              <label className="space-y-2 text-sm font-medium text-slate-700">
+                Message
+                <textarea
+                  rows="4"
+                  value={contactForm.message}
+                  onChange={(event) => handleFormChange('message', event.target.value)}
+                  className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                  placeholder="Tell us what you need and we will get back to you."
+                />
+                {formErrors.message ? <p className="text-sm text-rose-600">{formErrors.message}</p> : null}
               </label>
 
               <button
                 type="submit"
-                className="w-full rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                disabled={isSubmitting}
+                className="w-full rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-emerald-400"
               >
-                Submit
+                {isSubmitting ? 'Submitting...' : 'Submit'}
               </button>
-
-              {formSubmitted && (
-                <p className="rounded-2xl bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-                  Thank you! We have received your request and will contact you soon.
-                </p>
-              )}
             </form>
           </div>
         </div>

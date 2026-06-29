@@ -28,12 +28,12 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
   }
 
   return (
-    <section className="min-h-screen bg-slate-50 pt-28 pb-20">
+    <section className="bg-slate-50 py-14">
       <div className="container-custom px-4 md:px-8">
         <button
           type="button"
           onClick={onBack}
-          className="inline-flex items-center gap-2 text-slate-600 hover:text-emerald-700 transition mb-8 font-semibold"
+          className="inline-flex items-center gap-2 text-slate-600 hover:text-emerald-700 transition mb-6 font-semibold"
         >
           <ArrowLeft size={20} />
           Back to products
@@ -43,7 +43,7 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
-          className="rounded-[2rem] bg-white p-8 shadow-sm mb-12"
+          className="rounded-[2rem] bg-white p-6 shadow-sm mb-8"
         >
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
@@ -56,8 +56,8 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
           </div>
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-[1.7fr_0.95fr]">
-          <div className="space-y-8">
+        <div className="grid gap-6 lg:grid-cols-[1.7fr_0.95fr]">
+          <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

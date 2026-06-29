@@ -25,7 +25,7 @@ export const PRODUCTS = [
     presentation: '100 ml, 250 ml, 500 ml, 1 Ltr',
     ingredients: 'Vitamin A, D3, H, E, C, B12, nicotinamide, copper, zinc, cobalt, potassium iodide, selenium, D.L. methionine and energy support.',
     storage: 'Store in a cool, dry place away from direct sunlight.',
-    image: '/public/images/products/capital_h_100ml.png'
+    image: '/images/products/capital_h_100ml.png'
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const PRODUCTS = [
     presentation: '30 ml',
     ingredients: 'Agnus castus, sepia, palladium, borax, apis mellifica, murex purpurea, aurum metallicum and purified water.',
     storage: 'Store in a cool place with the bottle tightly closed.',
-    image: '/public/images/products/fert_i.png'
+    image: '/images/products/fert_i.png'
   },
   {
     id: 3,
@@ -59,7 +59,7 @@ export const PRODUCTS = [
     presentation: '105 ml with 10 ml disposable bottle',
     ingredients: 'Caulophyllum thalictroides, cimicifuga racemosa, cantharis, cinchona officinalis, pulsatilla nigricans, rhus toxicodendron, sepia, sabina, secale cornutum and ustilago maydis.',
     storage: 'Keep away from direct sunlight and store in a cool place.',
-    image: '/public/images/products/utroniya.png'
+    image: '/images/products/utroniya.png'
   },
   {
     id: 4,
@@ -76,7 +76,7 @@ export const PRODUCTS = [
     presentation: '30 ml',
     ingredients: 'Apis mellifica, graphites, rhus toxicodendron, thuja occidentalis, sulphur, petroleum, psorinum and excipients.',
     storage: 'Store in a cool, dry place and keep the cap tightly closed.',
-    image: '/public/images/products/viba_skin_drops.png'
+    image: '/images/products/viba_skin_drops.png'
   },
   {
     id: 5,
@@ -93,7 +93,7 @@ export const PRODUCTS = [
     presentation: '300 gm',
     ingredients: 'Calcium, phosphorus, vitamins A and D3, B12, magnesium, carbohydrates, shatavari, jivanti and pueraria mirifica.',
     storage: 'Keep sealed and store in a dry, cool place.',
-    image: '/public/images/products/viba_milk.png'
+    image: '/images/products/viba_milk.png'
   },
   {
     id: 6,
@@ -110,7 +110,7 @@ export const PRODUCTS = [
     presentation: '100 ml',
     ingredients: 'Chelidonium majus, nux vomica, sulphur, lycopodium clavatum, purified water and excipients.',
     storage: 'Store in a cool place away from sunlight.',
-    image: '/public/images/products/viba_liv_100ml.png'
+    image: '/images/products/viba_liv_100ml.png'
   },
   {
     id: 7,
@@ -127,7 +127,7 @@ export const PRODUCTS = [
     presentation: '500 ml',
     ingredients: 'Chelidonium majus, nux vomica, sulphur, lycopodium clavatum, purified water and excipients.',
     storage: 'Store in a cool, dry place with the bottle sealed.',
-    image: '/public/images/products/viba_liv_500ml.png'
+    image: '/images/products/viba_liv_500ml.png'
   },
   {
     id: 8,
@@ -144,7 +144,7 @@ export const PRODUCTS = [
     presentation: '200 ml',
     ingredients: 'Pyrogenium, pulsatilla nigricans, secale cornutum, helonias dioica, sepia and silicea.',
     storage: 'Store in a cool place and protect from direct sunlight.',
-    image: '/public/images/products/viba_sept.png'
+    image: '/images/products/viba_sept.png'
   },
   {
     id: 9,
@@ -161,7 +161,7 @@ export const PRODUCTS = [
     presentation: '200 ml',
     ingredients: 'Natrum muriaticum, gluteninum, natrum carbonicum, aconitum napellus and arsenicum album.',
     storage: 'Keep tightly capped and away from heat.',
-    image: '/public/images/products/frozen.png'
+    image: '/images/products/frozen.png'
   },
   {
     id: 10,
@@ -178,7 +178,7 @@ export const PRODUCTS = [
     presentation: '100 ml',
     ingredients: 'Aletris farinosa, apis mellifica, calcarea phosphorica, caulophyllum thalictroides, hydrastis canadensis and sepia.',
     storage: 'Store in a cool and dry place.',
-    image: '/public/images/products/viba_abort.png'
+    image: '/images/products/viba_abort.png'
   },
   {
     id: 11,
@@ -195,7 +195,7 @@ export const PRODUCTS = [
     presentation: '100 tablets',
     ingredients: 'Arnica montana, calendula officinalis, pulsatilla nigricans, calcarea sulphurica, helonias dioica, secale cornutum, sepia and silicea.',
     storage: 'Store in a cool, dry place away from sunlight.',
-    image: '/public/images/products/fm_two.png'
+    image: '/images/products/fm_two.png'
   },
   {
     id: 12,
@@ -212,7 +212,7 @@ export const PRODUCTS = [
     presentation: '100 ml',
     ingredients: 'Aconitum napellus, antimonium iodatum, bryonia alba, phosphorus, pneumococcin and sulphur.',
     storage: 'Store in a cool place and keep tightly sealed.',
-    image: '/public/images/products/viba_cof.png'
+    image: '/images/products/viba_cof.png'
   },
   {
     id: 13,
@@ -229,7 +229,7 @@ export const PRODUCTS = [
     presentation: '100 ml',
     ingredients: 'Cantharis, camphora, berberis vulgaris, equisetum hyemale, eupatorium purpureum and aconite napellus.',
     storage: 'Store in a shaded and cool place.',
-    image: '/public/images/products/urinil.png'
+    image: '/images/products/urinil.png'
   },
   {
     id: 14,
@@ -246,7 +246,7 @@ export const PRODUCTS = [
     presentation: '100 ml with spray',
     ingredients: 'Lilium tigrinum, podophyllum paltatum, belladonna, aloe socotrina and murex purpurea.',
     storage: 'Keep in a cool place and protect from direct sunlight.',
-    image: '/public/images/products/upc.png'
+    image: '/images/products/upc.png'
   },
   {
     id: 15,
@@ -263,7 +263,7 @@ export const PRODUCTS = [
     presentation: 'As per product range',
     ingredients: 'Homeopathic veterinary ingredients prepared under licensed formulation standards.',
     storage: 'Store as specified on each product label.',
-    image: '/public/images/products/fresh_approach.jpeg'
+    image: '/images/products/fresh_approach.jpeg'
   },
   {
     id: 16,
@@ -280,7 +280,7 @@ export const PRODUCTS = [
     presentation: '100 ml',
     ingredients: 'Bryonia alba, aconitum napellus, rhus toxicodendron, baptisia tinctoria and belladonna.',
     storage: 'Store in a cool, dry place away from sunlight.',
-    image: '/public/images/products/feve_off.png'
+    image: '/images/products/feve_off.png'
   },
   {
     id: 17,
@@ -297,7 +297,7 @@ export const PRODUCTS = [
     presentation: '100 tablets',
     ingredients: 'Alfalfa, calcarea carbonica, phosphorus, lecithin, magnesium phosphoricum, carica papaya and more.',
     storage: 'Keep in a dry and cool environment.',
-    image: '/public/images/products/viba_milk.png'
+    image: '/images/products/viba_milk.png'
   },
   {
     id: 18,
@@ -314,10 +314,11 @@ export const PRODUCTS = [
     presentation: '100 tablets + 100 ml liquid',
     ingredients: 'Ferrum phosphoricum, calcarea iodata, phytolacca, sulphur, naja tripudians, scrophularia nodosa and conium maculatum.',
     storage: 'Store in a cool place and keep away from direct sunlight.',
-    image: '/public/images/products/viba_must_kit.png'
+    image: '/images/products/viba_must_kit.png'
   }
 ]
 
 export const getProductById = (id: number) => PRODUCTS.find((product) => product.id === id)
 
 export const getProductsByCategory = (category: string) => PRODUCTS.filter((product) => product.category === category)
+

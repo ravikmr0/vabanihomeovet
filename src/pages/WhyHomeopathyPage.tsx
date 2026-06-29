@@ -162,7 +162,7 @@ const WhyHomeopathyPage = () => {
   return (
     <div className="min-h-screen">
       {/* Page Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-purple-50 to-white">
+      <section className="pt-16 pb-10 bg-gradient-to-b from-purple-50 to-white">
         <div className="container-custom px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -181,7 +181,7 @@ const WhyHomeopathyPage = () => {
       </section>
 
       {/* Hero Image */}
-      <section className="relative h-96 overflow-hidden">
+      <section className="relative h-72 overflow-hidden">
         <img
           src="/images/heroimages/complete_product_range.png"
           alt="Natural animal wellness"
@@ -198,7 +198,7 @@ const WhyHomeopathyPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Six Core Principles
@@ -214,7 +214,7 @@ const WhyHomeopathyPage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {principles.map((principle, idx) => (
               <motion.div
@@ -246,7 +246,7 @@ const WhyHomeopathyPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Three Categories of Benefits
@@ -255,7 +255,7 @@ const WhyHomeopathyPage = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -290,7 +290,7 @@ const WhyHomeopathyPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Conditions We Treat
@@ -332,7 +332,7 @@ const WhyHomeopathyPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Homeopathy vs. Traditional Approach
@@ -397,7 +397,7 @@ const WhyHomeopathyPage = () => {
             viewport={{ once: true }}
             className="mx-auto max-w-6xl"
           >
-            <div className="mb-8 text-center md:text-left">
+            <div className="mb-6 text-center md:text-left">
               <div className="mb-4 flex items-center justify-center gap-3 md:justify-start">
                 <Users className="text-primary" size={32} />
                 <div>
@@ -466,7 +466,7 @@ const WhyHomeopathyPage = () => {
             <h2 className="mb-6 text-2xl font-bold leading-tight text-dark sm:text-3xl md:text-4xl">
               Experience the Homeopathy Difference Today
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-600 mb-6">
               Join our growing community of satisfied practitioners who've transformed their animal healthcare approach
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

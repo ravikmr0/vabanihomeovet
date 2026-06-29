@@ -60,7 +60,7 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen">
       {/* Page Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-teal-50 to-white">
+      <section className="pt-16 pb-10 bg-gradient-to-b from-teal-50 to-white">
         <div className="container-custom px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ const AboutPage = () => {
       {/* About Content */}
       <section className="section-spacing">
         <div className="container-custom px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center mb-10">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -114,7 +114,7 @@ const AboutPage = () => {
               className="relative h-96 rounded-2xl overflow-hidden shadow-xl"
             >
               <img
-                src="/public/images/about.png"
+                src="/images/about.png"
                 alt="Professional veterinary team"
                 className="w-full h-full object-cover"
               />
@@ -127,7 +127,7 @@ const AboutPage = () => {
       {/* Mission & Vision */}
       <section className="section-spacing bg-white">
         <div className="container-custom px-4 md:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -177,7 +177,7 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Our Principles
@@ -193,7 +193,7 @@ const AboutPage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {missionValues.map((item, idx) => {
               const Icon = item.icon
@@ -274,3 +274,4 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+

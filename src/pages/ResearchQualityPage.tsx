@@ -104,7 +104,7 @@ const ResearchQualityPage = () => {
   return (
     <div className="min-h-screen">
       {/* Page Hero */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-blue-50 to-white">
+      <section className="pt-16 pb-10 bg-gradient-to-b from-blue-50 to-white">
         <div className="container-custom px-4 md:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -123,7 +123,7 @@ const ResearchQualityPage = () => {
       </section>
 
       {/* Hero Image */}
-      <section className="relative h-96 overflow-hidden">
+      <section className="relative h-72 overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1530026405186-a32e567ee231?auto=format&fit=crop&w=1600&q=80"
           alt="Laboratory research"
@@ -140,7 +140,7 @@ const ResearchQualityPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Our Quality Standards
@@ -156,7 +156,7 @@ const ResearchQualityPage = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
           >
             {qualityStandards.map((standard, idx) => (
               <motion.div
@@ -195,7 +195,7 @@ const ResearchQualityPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Quality Assurance Process
@@ -242,7 +242,7 @@ const ResearchQualityPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Active Research Areas
@@ -254,7 +254,7 @@ const ResearchQualityPage = () => {
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -285,7 +285,7 @@ const ResearchQualityPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Certifications & Compliance
@@ -329,7 +329,7 @@ const ResearchQualityPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-dark mb-4">
               Comprehensive Testing Procedures
@@ -345,7 +345,7 @@ const ResearchQualityPage = () => {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 category: 'Pre-Manufacturing Tests',
@@ -411,7 +411,7 @@ const ResearchQualityPage = () => {
       <section className="section-spacing bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container-custom px-4 md:px-8">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center"
+            className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

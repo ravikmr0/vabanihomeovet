@@ -33,7 +33,7 @@ const Products = ({ onViewAllProducts }) => {
   return (
     <section id="products" className="section-spacing bg-gradient-to-b from-slate-50 via-white to-emerald-50">
       <div className="container-custom">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <p className="text-sm font-semibold uppercase tracking-[0.32em] text-emerald-700 mb-4">Premium product carousel</p>
           <h2 className="text-4xl font-bold text-dark md:text-5xl leading-tight">
             Discover our best-selling veterinary formulas
@@ -107,7 +107,7 @@ const Products = ({ onViewAllProducts }) => {
           </div>
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-8 text-center">
           <button
             onClick={onViewAllProducts}
             className="inline-flex items-center gap-3 rounded-full bg-emerald-600 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-700"

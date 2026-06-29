@@ -88,7 +88,7 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-[100svh] overflow-hidden bg-slate-950 pt-20 text-white"
+      className="relative isolate flex min-h-[85vh] overflow-hidden bg-slate-950 pt-20 text-white"
       onMouseEnter={() => setIsAutoPlay(false)}
       onMouseLeave={() => setIsAutoPlay(true)}
     >
@@ -132,8 +132,8 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
       </div>
 
       <div className="relative z-10 flex h-full w-full items-end justify-start">
-        <div className="w-full max-w-3xl px-4 pb-12 sm:px-6 sm:pb-16 lg:px-8">
-          <div className="p-5 md:p-8 lg:p-10">
+        <div className="w-full max-w-3xl px-4 pb-10 sm:px-6 sm:pb-12 lg:px-8">
+          <div className="p-4 md:p-6 lg:p-8">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">{slide.eyebrow}</p>
             <h1 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-6xl">
               {slide.title}
@@ -141,7 +141,7 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-100 sm:text-base">
               {slide.description}
             </p>
-            <ul className="mt-5 flex flex-wrap gap-2 sm:gap-3">
+            <ul className="mt-4 flex flex-wrap gap-2 sm:gap-3">
               {slide.bullets.map((bullet) => (
                 <li key={bullet} className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-sm text-white">
                   {bullet}

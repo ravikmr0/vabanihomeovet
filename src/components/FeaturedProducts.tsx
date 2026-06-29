@@ -252,7 +252,7 @@ const FeaturedProducts = ({ onViewAll, onProductView }) => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mt-12"
+          className="text-center mt-8"
         >
           <button
             onClick={() => {
