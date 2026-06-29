@@ -88,7 +88,7 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
   return (
     <section
       id="home"
-      className="relative isolate flex min-h-[85vh] overflow-hidden bg-slate-950 pt-20 text-white"
+      className="relative isolate flex h-screen overflow-hidden bg-slate-950 text-white"
       onMouseEnter={() => setIsAutoPlay(false)}
       onMouseLeave={() => setIsAutoPlay(true)}
     >
@@ -103,9 +103,9 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
             className="absolute inset-0"
           >
             <img src={slide.image} alt={slide.title} className="h-full w-full object-cover object-center" />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/20 via-slate-950/10 to-transparent" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.16),_transparent_35%)]" />
-            <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-slate-950/80 via-slate-950/50 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-l from-slate-950/40 via-slate-950/20 to-transparent" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.08),_transparent_40%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-slate-950/90 via-slate-950/70 to-transparent" />
           </motion.div>
         </AnimatePresence>
       </div>
@@ -132,18 +132,18 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
       </div>
 
       <div className="relative z-10 flex h-full w-full items-end justify-start">
-        <div className="w-full max-w-3xl px-4 pb-10 sm:px-6 sm:pb-12 lg:px-8">
+        <div className="w-full max-w-2xl px-4 pb-4 sm:px-6 sm:pb-6 md:pb-8 lg:px-12 lg:pb-10 xl:pb-12">
           <div className="p-4 md:p-6 lg:p-8">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">{slide.eyebrow}</p>
-            <h1 className="text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-6xl">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400 sm:text-sm md:mb-3">{slide.eyebrow}</p>
+            <h1 className="text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
               {slide.title}
             </h1>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-100 sm:text-base">
+            <p className="mt-3 max-w-xl text-xs leading-6 text-slate-50 sm:text-sm md:mt-4 md:leading-7 lg:text-base">
               {slide.description}
             </p>
-            <ul className="mt-4 flex flex-wrap gap-2 sm:gap-3">
+            <ul className="mt-4 flex flex-wrap gap-2 sm:gap-3 md:mt-5">
               {slide.bullets.map((bullet) => (
-                <li key={bullet} className="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-sm text-white">
+                <li key={bullet} className="rounded-full border border-white/30 bg-white/15 px-2 py-1 text-xs font-medium text-white backdrop-blur-sm sm:px-3 sm:py-1.5 sm:text-sm">
                   {bullet}
                 </li>
               ))}
@@ -152,7 +152,7 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center justify-center gap-2 sm:bottom-8">
+      <div className="absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center justify-center gap-2 sm:bottom-10 lg:bottom-12">
         {slides.map((_, idx) => (
           <button
             key={idx}
@@ -163,7 +163,7 @@ const Hero = ({ onContactClick }: { onContactClick?: () => void }) => {
         ))}
       </div>
 
-      <div className="absolute right-3 top-24 z-30 rounded-full bg-white/90 px-3 py-2 text-sm font-semibold text-slate-800 shadow-lg backdrop-blur sm:right-4 sm:px-4 lg:right-6">
+      <div className="absolute right-4 top-20 z-30 rounded-full bg-white/90 px-3 py-2 text-sm font-semibold text-slate-800 shadow-lg backdrop-blur sm:right-6 sm:px-4 sm:py-2.5 lg:right-8">
         <span>{currentSlide + 1}</span>/<span>{slides.length}</span>
       </div>
     </section>

@@ -110,16 +110,21 @@ const Footer = ({ onScrollTop }) => {
                   <div className="mt-0.5 flex-shrink-0 text-primary">
                     <Phone size={16} />
                   </div>
-                  <a href="tel:+917906410606" className="transition-colors hover:text-primary">
-                    +91 7906410606
-                  </a>
+                  <div className="flex flex-col gap-1">
+                    <a href="tel:+917906410606" className="transition-colors hover:text-primary">
+                      +91 7906410606
+                    </a>
+                    <a href="tel:+916395007309" className="transition-colors hover:text-primary">
+                      +91 6395007309
+                    </a>
+                  </div>
                 </li>
                 <li className="flex items-start gap-2">
                   <div className="mt-0.5 flex-shrink-0 text-primary">
                     <Mail size={16} />
                   </div>
-                  <a href="mailto:Info@vibanihomeovet.com" className="break-all transition-colors hover:text-primary">
-                    Info@vibanihomeovet.com
+                  <a href="mailto:info@vibanihomeovet.com" className="break-all transition-colors hover:text-primary">
+                    info@vibanihomeovet.com
                   </a>
                 </li>
                 <li className="flex items-start gap-2">

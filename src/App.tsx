@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -52,8 +52,14 @@ function AppContent() {
     setSelectedProductId(productId)
   }
 
+  const navigate = useNavigate()
+
   const handleBackFromProduct = () => {
     window.history.back()
+  }
+
+  const handleViewProductsPage = () => {
+    navigate('/products')
   }
 
   const getCurrentPage = () => {
@@ -72,7 +78,7 @@ function AppContent() {
     <>
       <Header scrollY={scrollY} currentPage={getCurrentPage()} />
       <Routes>
-        <Route path="/" element={<HomePage onContactClick={handleContactClick} />} />
+        <Route path="/" element={<HomePage onContactClick={handleContactClick} onViewAllProducts={handleViewProductsPage} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/products" element={
           <main className="font-inter">
