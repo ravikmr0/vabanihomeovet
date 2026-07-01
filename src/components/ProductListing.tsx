@@ -437,7 +437,7 @@ const ProductListing = ({ onProductClick }) => {
               <label className="space-y-2 text-sm font-medium text-slate-700">
                 Message
                 <textarea
-                  rows="4"
+                  rows={4}
                   value={contactForm.message}
                   onChange={(event) => handleFormChange('message', event.target.value)}
                   className="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"

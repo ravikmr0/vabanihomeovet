@@ -318,6 +318,8 @@ export const PRODUCTS = [
   }
 ]
 
+export const FEATURED_PRODUCTS = PRODUCTS.slice(0, 5)
+
 export const getProductById = (id: number) => PRODUCTS.find((product) => product.id === id)
 
 export const getProductsByCategory = (category: string) => PRODUCTS.filter((product) => product.category === category)
