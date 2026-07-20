@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, CheckCircle, AlertCircle } from 'lucide-react'
+import Seo from '../components/Seo'
+import { buildOrganizationSchema, buildWebSiteSchema } from '../seo/seo'
 
 const initialFormData = {
   name: '',
@@ -143,8 +145,16 @@ const ContactPage = () => {
     }
   }
 
+  const structuredData = [buildOrganizationSchema(), buildWebSiteSchema()]
+
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Contact Vibani Homeo Vet | Product Enquiry & Support"
+        description="Contact Vibani Homeo Vet for product enquiries, veterinary support, pricing, and partnership opportunities for animal healthcare products."
+        keywords={['contact vibani homeo vet','product enquiry','animal healthcare support','veterinary product inquiry']}
+        structuredData={structuredData}
+      />
       <section className="pt-16 pb-10 bg-gradient-to-b from-emerald-50 to-white">
         <div className="container-custom px-4 md:px-8">
           <motion.div

@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import { PRODUCT_CATEGORIES, getProductById, getProductsByCategory } from '../data/products'
+import Seo from './Seo'
+import { buildOrganizationSchema, buildProductSchema, buildWebSiteSchema } from '../seo/seo'
 
 const ProductDetail = ({ productId, onBack, onViewProduct }) => {
   const { id } = useParams()
@@ -19,6 +21,7 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
 
   const category = PRODUCT_CATEGORIES.find((c) => c.id === product.category)
   const relatedProducts = getProductsByCategory(product.category).filter((p) => p.id !== product.id).slice(0, 3)
+  const structuredData = [buildOrganizationSchema(), buildWebSiteSchema(), buildProductSchema(product)]
 
   const handleRelatedProductClick = (relatedProductId) => {
     if (onViewProduct) {
@@ -28,7 +31,16 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
   }
 
   return (
-    <section className="bg-slate-50 py-14">
+    <>
+      <Seo
+        title={`${product.name} | Vibani Homeo Vet - ${product.tagline}`}
+        description={product.shortDescription || product.tagline}
+        keywords={[product.name, product.hindiName, product.tagline, 'homeopathic veterinary medicine', 'animal healthcare product']}
+        image={product.image}
+        type="product"
+        structuredData={structuredData}
+      />
+      <section className="bg-slate-50 py-14">
       <div className="container-custom px-4 md:px-8">
         <button
           type="button"
@@ -204,6 +216,7 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
         )}
       </div>
     </section>
+    </>
   )
 }
 

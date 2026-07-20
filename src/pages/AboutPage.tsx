@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { CheckCircle, Users, Award, Target, Heart, Zap } from 'lucide-react'
+import Seo from '../components/Seo'
+import { buildOrganizationSchema, buildWebSiteSchema } from '../seo/seo'
 
 const AboutPage = () => {
   const missionValues = [
@@ -57,8 +59,16 @@ const AboutPage = () => {
     }
   }
 
+  const structuredData = [buildOrganizationSchema(), buildWebSiteSchema()]
+
   return (
     <div className="min-h-screen">
+      <Seo
+        title="About Vibani Homeo Vet | Natural Veterinary Care"
+        description="Learn about Vibani Homeo Vet’s mission, values, and commitment to compassionate homeopathic veterinary care for animals and farms."
+        keywords={['about vibani homeo vet','natural veterinary care','animal wellness brand','homeopathic veterinary company']}
+        structuredData={structuredData}
+      />
       {/* Page Hero */}
       <section className="pt-16 pb-10 bg-gradient-to-b from-teal-50 to-white">
         <div className="container-custom px-4 md:px-8">

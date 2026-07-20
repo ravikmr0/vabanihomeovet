@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
+import Seo from '../components/Seo'
+import { buildOrganizationSchema, buildWebSiteSchema } from '../seo/seo'
 
 const ResearchQualityPage = () => {
   const qualityStandards = [
@@ -101,8 +103,16 @@ const ResearchQualityPage = () => {
     }
   }
 
+  const structuredData = [buildOrganizationSchema(), buildWebSiteSchema()]
+
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Research & Quality | Vibani Homeo Vet"
+        description="See Vibani Homeo Vet’s quality standards, research focus and manufacturing practices for trusted animal healthcare products."
+        keywords={['veterinary quality standards','homeopathic manufacturing','animal health research','quality assurance products']}
+        structuredData={structuredData}
+      />
       {/* Page Hero */}
       <section className="pt-16 pb-10 bg-gradient-to-b from-blue-50 to-white">
         <div className="container-custom px-4 md:px-8">

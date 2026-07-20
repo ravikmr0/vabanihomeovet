@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Users } from 'lucide-react'
+import Seo from '../components/Seo'
+import { buildOrganizationSchema, buildWebSiteSchema } from '../seo/seo'
 
 const WhyHomeopathyPage = () => {
   const principles = [
@@ -159,8 +161,16 @@ const WhyHomeopathyPage = () => {
     }
   }
 
+  const structuredData = [buildOrganizationSchema(), buildWebSiteSchema()]
+
   return (
     <div className="min-h-screen">
+      <Seo
+        title="Why Homeopathy for Animals? | Vibani Homeo Vet"
+        description="Learn why homeopathy is a natural, gentle and effective approach for livestock, poultry, dairy animals, pets and companion animals."
+        keywords={['why homeopathy','homeopathy for animals','natural animal healing','gentle veterinary care']}
+        structuredData={structuredData}
+      />
       {/* Page Hero */}
       <section className="pt-16 pb-10 bg-gradient-to-b from-purple-50 to-white">
         <div className="container-custom px-4 md:px-8">
