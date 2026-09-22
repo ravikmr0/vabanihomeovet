@@ -185,7 +185,7 @@ const FeaturedProducts = ({ onViewAll, onProductView }) => {
                   transition={{ delay: 0.75 }}
                   className="flex flex-col sm:flex-row gap-4"
                 >
-                  <a href={`/product/${currentProduct.id}`} className="btn-primary flex items-center justify-center gap-2">
+                  <a href={`/products/${currentProduct.slug}`} className="btn-primary flex items-center justify-center gap-2">
                     View Details
                     <ArrowRight size={18} />
                   </a>

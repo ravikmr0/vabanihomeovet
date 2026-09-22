@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate, useParams } from 'react-router-dom'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -18,10 +18,18 @@ import WhyHomeopathyPage from './pages/WhyHomeopathyPage'
 import ResearchQualityPage from './pages/ResearchQualityPage'
 import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/productsPage'
+import { getProductById } from './data/products'
+
+function LegacyProductRedirect() {
+  const { id } = useParams()
+  const product = getProductById(Number(id))
+
+  return <Navigate replace to={product ? `/products/${product.slug}` : '/products'} />
+}
 
 function AppContent() {
   const [scrollY, setScrollY] = useState(0)
-  const [selectedProductId, setSelectedProductId] = useState(null)
+  const [selectedProductSlug, setSelectedProductSlug] = useState(null)
   const location = useLocation()
 
   useEffect(() => {
@@ -48,8 +56,8 @@ function AppContent() {
     }
   }
 
-  const handleViewProduct = (productId) => {
-    setSelectedProductId(productId)
+  const handleViewProduct = (productSlug) => {
+    setSelectedProductSlug(productSlug)
   }
 
   const navigate = useNavigate()
@@ -70,7 +78,7 @@ function AppContent() {
     if (path === '/why-homeopathy') return 'why-homeopathy'
     if (path === '/research-quality') return 'research-quality'
     if (path === '/contact') return 'contact'
-    if (path.startsWith('/product/')) return 'product-detail'
+    if (path.startsWith('/products/')) return 'product-detail'
     return 'home'
   }
 
@@ -85,12 +93,13 @@ function AppContent() {
             <ProductsPage onProductClick={handleViewProduct} />
           </main>
         } />
-        <Route path="/product/:id" element={
+        <Route path="/products/:slug" element={
           <main className="font-inter">
-            <ProductDetail productId={selectedProductId} onBack={handleBackFromProduct} onViewProduct={handleViewProduct} />
+            <ProductDetail productSlug={selectedProductSlug} onBack={handleBackFromProduct} onViewProduct={handleViewProduct} />
             <Contact />
           </main>
         } />
+        <Route path="/product/:id" element={<LegacyProductRedirect />} />
         <Route path="/why-homeopathy" element={<WhyHomeopathyPage />} />
         <Route path="/research-quality" element={<ResearchQualityPage />} />
         <Route path="/contact" element={<ContactPage />} />

@@ -34,7 +34,7 @@ export const buildProductSchema = (product: any, origin = 'https://vibanihomeove
     offers: {
       '@type': 'Offer',
       availability: 'https://schema.org/InStock',
-      url: `${origin}/product/${product?.id}`
+      url: `${origin}/products/${product?.slug}`
     }
   }
 }
@@ -46,7 +46,7 @@ export const buildItemListSchema = (products: any[], origin = 'https://vibanihom
     '@type': 'ListItem',
     position: index + 1,
     name: product.name,
-    url: `${origin}/product/${product.id}`
+    url: `${origin}/products/${product.slug}`
   }))
 })
 

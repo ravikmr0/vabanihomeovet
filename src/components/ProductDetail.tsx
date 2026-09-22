@@ -1,15 +1,20 @@
 import React from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { Navigate, useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
-import { PRODUCT_CATEGORIES, getProductById, getProductsByCategory } from '../data/products'
+import { PRODUCT_CATEGORIES, getProductById, getProductBySlug, getProductsByCategory } from '../data/products'
 import Seo from './Seo'
 import { buildOrganizationSchema, buildProductSchema, buildWebSiteSchema } from '../seo/seo'
 
-const ProductDetail = ({ productId, onBack, onViewProduct }) => {
-  const { id } = useParams()
+const ProductDetail = ({ productSlug, onBack, onViewProduct }) => {
+  const { slug } = useParams()
   const navigate = useNavigate()
-  const product = getProductById(parseInt(id || productId, 10))
+  const legacyProduct = slug && /^\d+$/.test(slug) ? getProductById(Number(slug)) : undefined
+  const product = getProductBySlug(slug || productSlug)
+
+  if (legacyProduct) {
+    return <Navigate replace to={`/products/${legacyProduct.slug}`} />
+  }
 
   if (!product) {
     return (
@@ -23,11 +28,11 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
   const relatedProducts = getProductsByCategory(product.category).filter((p) => p.id !== product.id).slice(0, 3)
   const structuredData = [buildOrganizationSchema(), buildWebSiteSchema(), buildProductSchema(product)]
 
-  const handleRelatedProductClick = (relatedProductId) => {
+  const handleRelatedProductClick = (relatedProductSlug) => {
     if (onViewProduct) {
-      onViewProduct(relatedProductId)
+      onViewProduct(relatedProductSlug)
     }
-    navigate(`/product/${relatedProductId}`)
+    navigate(`/products/${relatedProductSlug}`)
   }
 
   return (
@@ -204,7 +209,7 @@ const ProductDetail = ({ productId, onBack, onViewProduct }) => {
                   <p className="text-sm leading-6 text-slate-600 mb-4">{relatedProduct.tagline}</p>
                   <button
                     type="button"
-                    onClick={() => handleRelatedProductClick(relatedProduct.id)}
+                    onClick={() => handleRelatedProductClick(relatedProduct.slug)}
                     className="text-sm font-semibold text-emerald-700 hover:text-emerald-800 transition"
                   >
                     View details →

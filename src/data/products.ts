@@ -9,7 +9,7 @@ export const PRODUCT_CATEGORIES = [
   { id: 'udder', name: 'Udder & Mastitis Care', accent: 'from-blue-500 to-slate-500' }
 ]
 
-export const PRODUCTS = [
+const PRODUCT_DATA = [
   {
     id: 1,
     name: 'CAPITAL-H',
@@ -318,9 +318,39 @@ export const PRODUCTS = [
   }
 ]
 
+export const slugifyProductName = (name: string) =>
+  name
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
+const usedSlugs = new Set<string>()
+
+export const PRODUCTS = PRODUCT_DATA.map((product) => {
+  const baseSlug = slugifyProductName(product.name) || `product-${product.id}`
+  let slug = baseSlug
+  let suffix = 2
+
+  while (usedSlugs.has(slug)) {
+    slug = `${baseSlug}-${suffix}`
+    suffix += 1
+  }
+
+  usedSlugs.add(slug)
+
+  return {
+    ...product,
+    slug
+  }
+})
+
 export const FEATURED_PRODUCTS = PRODUCTS.slice(0, 5)
 
 export const getProductById = (id: number) => PRODUCTS.find((product) => product.id === id)
+
+export const getProductBySlug = (slug: string) => PRODUCTS.find((product) => product.slug === slug)
 
 export const getProductsByCategory = (category: string) => PRODUCTS.filter((product) => product.category === category)
 

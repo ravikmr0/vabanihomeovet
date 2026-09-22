@@ -126,9 +126,9 @@ const ProductListing = ({ onProductClick }) => {
 
   const handleViewDetails = (product) => {
     if (onProductClick) {
-      onProductClick(product.id)
+      onProductClick(product.slug)
     }
-    navigate(`/product/${product.id}`)
+    navigate(`/products/${product.slug}`)
   }
 
   const filteredProducts = useMemo(() => {
