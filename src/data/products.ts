@@ -24,8 +24,7 @@ const PRODUCT_DATA = [
     dosage: '20-25 ml daily for 60 days before calving in cows; 10 ml daily for bulls and lactating cattle; 3-7 ml per 100 birds for poultry.',
     presentation: '100 ml, 250 ml, 500 ml, 1 Ltr',
     ingredients: 'Vitamin A, D3, H, E, C, B12, nicotinamide, copper, zinc, cobalt, potassium iodide, selenium, D.L. methionine and energy support.',
-    storage: 'Store in a cool, dry place away from direct sunlight.',
-    image: '/images/products/capital_h_100ml.png'
+    storage: 'Store in a cool, dry place away from direct sunlight.'
   },
   {
     id: 2,
@@ -41,8 +40,7 @@ const PRODUCT_DATA = [
     dosage: '30 ml once or as directed by the veterinarian.',
     presentation: '30 ml',
     ingredients: 'Agnus castus, sepia, palladium, borax, apis mellifica, murex purpurea, aurum metallicum and purified water.',
-    storage: 'Store in a cool place with the bottle tightly closed.',
-    image: '/images/products/fert_i.png'
+    storage: 'Store in a cool place with the bottle tightly closed.'
   },
   {
     id: 3,
@@ -58,8 +56,7 @@ const PRODUCT_DATA = [
     dosage: '5 ml three times daily or as directed by the veterinarian.',
     presentation: '105 ml with 10 ml disposable bottle',
     ingredients: 'Caulophyllum thalictroides, cimicifuga racemosa, cantharis, cinchona officinalis, pulsatilla nigricans, rhus toxicodendron, sepia, sabina, secale cornutum and ustilago maydis.',
-    storage: 'Keep away from direct sunlight and store in a cool place.',
-    image: '/images/products/utroniya.png'
+    storage: 'Keep away from direct sunlight and store in a cool place.'
   },
   {
     id: 4,
@@ -75,8 +72,7 @@ const PRODUCT_DATA = [
     dosage: '30-30 drops 3-4 times daily or as directed by the veterinarian.',
     presentation: '30 ml',
     ingredients: 'Apis mellifica, graphites, rhus toxicodendron, thuja occidentalis, sulphur, petroleum, psorinum and excipients.',
-    storage: 'Store in a cool, dry place and keep the cap tightly closed.',
-    image: '/images/products/viba_skin_drops.png'
+    storage: 'Store in a cool, dry place and keep the cap tightly closed.'
   },
   {
     id: 5,
@@ -92,8 +88,7 @@ const PRODUCT_DATA = [
     dosage: '300 gm once or as directed by the veterinarian.',
     presentation: '300 gm',
     ingredients: 'Calcium, phosphorus, vitamins A and D3, B12, magnesium, carbohydrates, shatavari, jivanti and pueraria mirifica.',
-    storage: 'Keep sealed and store in a dry, cool place.',
-    image: '/images/products/viba_milk.png'
+    storage: 'Keep sealed and store in a dry, cool place.'
   },
   {
     id: 6,
@@ -109,8 +104,7 @@ const PRODUCT_DATA = [
     dosage: 'Large animals 5 ml 3 to 4 times daily; small animals 2 ml 3 to 4 times daily; poultry as directed.',
     presentation: '100 ml',
     ingredients: 'Chelidonium majus, nux vomica, sulphur, lycopodium clavatum, purified water and excipients.',
-    storage: 'Store in a cool place away from sunlight.',
-    image: '/images/products/viba_liv_100ml.png'
+    storage: 'Store in a cool place away from sunlight.'
   },
   {
     id: 7,
@@ -126,8 +120,7 @@ const PRODUCT_DATA = [
     dosage: 'Large animals 15 ml 3 to 4 times daily; small animals 5 ml 3 to 4 times daily; poultry as directed.',
     presentation: '500 ml',
     ingredients: 'Chelidonium majus, nux vomica, sulphur, lycopodium clavatum, purified water and excipients.',
-    storage: 'Store in a cool, dry place with the bottle sealed.',
-    image: '/images/products/viba_liv_500ml.png'
+    storage: 'Store in a cool, dry place with the bottle sealed.'
   },
   {
     id: 8,
@@ -143,8 +136,7 @@ const PRODUCT_DATA = [
     dosage: '5 ml three times daily or as directed by the veterinarian.',
     presentation: '200 ml',
     ingredients: 'Pyrogenium, pulsatilla nigricans, secale cornutum, helonias dioica, sepia and silicea.',
-    storage: 'Store in a cool place and protect from direct sunlight.',
-    image: '/images/products/viba_sept.png'
+    storage: 'Store in a cool place and protect from direct sunlight.'
   },
   {
     id: 9,
@@ -160,8 +152,7 @@ const PRODUCT_DATA = [
     dosage: '5 ml 3 to 4 times daily or as directed by the veterinarian.',
     presentation: '200 ml',
     ingredients: 'Natrum muriaticum, gluteninum, natrum carbonicum, aconitum napellus and arsenicum album.',
-    storage: 'Keep tightly capped and away from heat.',
-    image: '/images/products/frozen.png'
+    storage: 'Keep tightly capped and away from heat.'
   },
   {
     id: 10,
@@ -177,8 +168,7 @@ const PRODUCT_DATA = [
     dosage: '5 ml 3 to 4 times daily or as directed by the veterinarian.',
     presentation: '100 ml',
     ingredients: 'Aletris farinosa, apis mellifica, calcarea phosphorica, caulophyllum thalictroides, hydrastis canadensis and sepia.',
-    storage: 'Store in a cool and dry place.',
-    image: '/images/products/viba_abort.png'
+    storage: 'Store in a cool and dry place.'
   },
   {
     id: 11,
@@ -194,8 +184,7 @@ const PRODUCT_DATA = [
     dosage: '5 tablets 2 times daily or as directed by the veterinarian.',
     presentation: '100 tablets',
     ingredients: 'Arnica montana, calendula officinalis, pulsatilla nigricans, calcarea sulphurica, helonias dioica, secale cornutum, sepia and silicea.',
-    storage: 'Store in a cool, dry place away from sunlight.',
-    image: '/images/products/fm_two.png'
+    storage: 'Store in a cool, dry place away from sunlight.'
   },
   {
     id: 12,
@@ -211,8 +200,7 @@ const PRODUCT_DATA = [
     dosage: '5-10 ml 2-4 times daily or as directed by the veterinarian.',
     presentation: '100 ml',
     ingredients: 'Aconitum napellus, antimonium iodatum, bryonia alba, phosphorus, pneumococcin and sulphur.',
-    storage: 'Store in a cool place and keep tightly sealed.',
-    image: '/images/products/viba_cof.png'
+    storage: 'Store in a cool place and keep tightly sealed.'
   },
   {
     id: 13,
@@ -228,8 +216,7 @@ const PRODUCT_DATA = [
     dosage: '5 ml three times daily or as directed by the veterinarian.',
     presentation: '100 ml',
     ingredients: 'Cantharis, camphora, berberis vulgaris, equisetum hyemale, eupatorium purpureum and aconite napellus.',
-    storage: 'Store in a shaded and cool place.',
-    image: '/images/products/urinil.png'
+    storage: 'Store in a shaded and cool place.'
   },
   {
     id: 14,
@@ -245,8 +232,7 @@ const PRODUCT_DATA = [
     dosage: 'Twice daily or as directed by the veterinarian.',
     presentation: '100 ml with spray',
     ingredients: 'Lilium tigrinum, podophyllum paltatum, belladonna, aloe socotrina and murex purpurea.',
-    storage: 'Keep in a cool place and protect from direct sunlight.',
-    image: '/images/products/upc.png'
+    storage: 'Keep in a cool place and protect from direct sunlight.'
   },
   {
     id: 15,
@@ -262,8 +248,7 @@ const PRODUCT_DATA = [
     dosage: 'As directed by the veterinarian or manufacturer guidance.',
     presentation: 'As per product range',
     ingredients: 'Homeopathic veterinary ingredients prepared under licensed formulation standards.',
-    storage: 'Store as specified on each product label.',
-    image: '/images/products/fresh_approach.jpeg'
+    storage: 'Store as specified on each product label.'
   },
   {
     id: 16,
@@ -279,8 +264,7 @@ const PRODUCT_DATA = [
     dosage: '5 ml three times daily or as directed by the veterinarian.',
     presentation: '100 ml',
     ingredients: 'Bryonia alba, aconitum napellus, rhus toxicodendron, baptisia tinctoria and belladonna.',
-    storage: 'Store in a cool, dry place away from sunlight.',
-    image: '/images/products/feve_off.png'
+    storage: 'Store in a cool, dry place away from sunlight.'
   },
   {
     id: 17,
@@ -296,8 +280,7 @@ const PRODUCT_DATA = [
     dosage: '5 tablets 2 times daily or as directed by the veterinarian.',
     presentation: '100 tablets',
     ingredients: 'Alfalfa, calcarea carbonica, phosphorus, lecithin, magnesium phosphoricum, carica papaya and more.',
-    storage: 'Keep in a dry and cool environment.',
-    image: '/images/products/viba_milk.png'
+    storage: 'Keep in a dry and cool environment.'
   },
   {
     id: 18,
@@ -313,8 +296,7 @@ const PRODUCT_DATA = [
     dosage: '5 tablets 2 times daily and 5 ml liquid 2 times daily or as directed by the veterinarian.',
     presentation: '100 tablets + 100 ml liquid',
     ingredients: 'Ferrum phosphoricum, calcarea iodata, phytolacca, sulphur, naja tripudians, scrophularia nodosa and conium maculatum.',
-    storage: 'Store in a cool place and keep away from direct sunlight.',
-    image: '/images/products/viba_must_kit.png'
+    storage: 'Store in a cool place and keep away from direct sunlight.'
   }
 ]
 
@@ -325,6 +307,27 @@ export const slugifyProductName = (name: string) =>
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
+
+const PRODUCT_IMAGES: Partial<Record<string, string>> = {
+  'capital-h': '/images/products/capital_h_100ml.png',
+  'fert-i': '/images/products/fert_i.png',
+  utroniya: '/images/products/utroniya.png',
+  'viba-skin-drops': '/images/products/viba_skin_drops.png',
+  'viba-liv-100ml': '/images/products/viba_liv_100ml.png',
+  'viba-liv-500ml': '/images/products/viba_liv_500ml.png',
+  'viba-milk-pro-gel': '/images/products/viba_milk.png',
+  'viba-sept': '/images/products/viba_sept.png',
+  frozen: '/images/products/frozen.png',
+  'viba-abort': '/images/products/viba_abort.png',
+  'f-m-two': '/images/products/fm_two.png',
+  'viba-cof': '/images/products/viba_cof.png',
+  urinil: '/images/products/urinil.png',
+  'u-p-c-uterine-prolaps-care': '/images/products/upc.png',
+  'fresh-approach': '/images/products/fresh_approach.jpeg',
+  'feve-off': '/images/products/feve_off.png',
+  'viba-milk': '/images/products/viba_milk.png',
+  'viba-must-kit': '/images/products/viba_must_kit.png'
+}
 
 const usedSlugs = new Set<string>()
 
@@ -340,10 +343,13 @@ export const PRODUCTS = PRODUCT_DATA.map((product) => {
 
   usedSlugs.add(slug)
 
-  return {
-    ...product,
-    slug
+  const image = PRODUCT_IMAGES[slug]
+
+  if (!image && import.meta.env.DEV) {
+    console.warn(`No official product image configured for "${product.name}" (${slug}).`)
   }
+
+  return { ...product, slug, image }
 })
 
 export const FEATURED_PRODUCTS = PRODUCTS.slice(0, 5)

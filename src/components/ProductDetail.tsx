@@ -3,6 +3,7 @@ import { Navigate, useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import { PRODUCT_CATEGORIES, getProductById, getProductBySlug, getProductsByCategory } from '../data/products'
+import ProductImage from './ProductImage'
 import Seo from './Seo'
 import { buildOrganizationSchema, buildProductSchema, buildWebSiteSchema } from '../seo/seo'
 
@@ -81,8 +82,8 @@ const ProductDetail = ({ productSlug, onBack, onViewProduct }) => {
               transition={{ duration: 0.55, delay: 0.05 }}
               className="rounded-[2rem] bg-white p-6 shadow-sm"
             >
-              <div className="aspect-[3/2] overflow-hidden rounded-[1.75rem] bg-slate-50 p-6 flex flex-col items-center justify-center">
-                <img src={product.image} alt={product.name} className="max-h-full max-w-full object-contain" loading="lazy" />
+              <div className="aspect-square overflow-hidden rounded-[1.75rem] bg-slate-50 p-6 flex flex-col items-center justify-center">
+                <ProductImage productName={product.name} src={product.image} className="min-h-0 w-full flex-1 object-contain" loading="eager" />
                 <p className="mt-4 text-center text-sm font-semibold text-slate-900">{product.name}</p>
               </div>
             </motion.div>
@@ -203,7 +204,7 @@ const ProductDetail = ({ productSlug, onBack, onViewProduct }) => {
                   className="rounded-[1.75rem] bg-white p-5 shadow-sm"
                 >
                   <div className="mb-4 h-36 overflow-hidden rounded-2xl bg-slate-100 p-4 flex items-center justify-center">
-                    <img src={relatedProduct.image} alt={relatedProduct.name} className="max-h-full w-auto object-contain" />
+                    <ProductImage productName={relatedProduct.name} src={relatedProduct.image} className="h-full w-full object-contain" />
                   </div>
                   <h4 className="text-lg font-semibold text-dark mb-2">{relatedProduct.name}</h4>
                   <p className="text-sm leading-6 text-slate-600 mb-4">{relatedProduct.tagline}</p>

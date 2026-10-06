@@ -18,11 +18,11 @@ import WhyHomeopathyPage from './pages/WhyHomeopathyPage'
 import ResearchQualityPage from './pages/ResearchQualityPage'
 import ContactPage from './pages/ContactPage'
 import ProductsPage from './pages/productsPage'
-import { getProductById } from './data/products'
+import { getProductById, getProductBySlug } from './data/products'
 
 function LegacyProductRedirect() {
   const { id } = useParams()
-  const product = getProductById(Number(id))
+  const product = getProductById(Number(id)) || getProductBySlug(id?.toLowerCase())
 
   return <Navigate replace to={product ? `/products/${product.slug}` : '/products'} />
 }

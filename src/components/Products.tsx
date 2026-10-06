@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { PRODUCTS } from '../data/products'
+import ProductImage from './ProductImage'
 
 const Products = ({ onViewAllProducts }) => {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -66,11 +67,10 @@ const Products = ({ onViewAllProducts }) => {
                   className="min-w-[92%] sm:min-w-[45%] lg:min-w-[31%] overflow-hidden rounded-[1.75rem] bg-white shadow-[0_24px_80px_-30px_rgba(15,23,42,0.12)]"
                 >
                   <div className="relative aspect-[3/2] overflow-hidden rounded-t-[1.75rem] bg-slate-100">
-                    <img
+                    <ProductImage
+                      productName={product.name}
                       src={product.image}
-                      alt={product.name}
                       className="h-full w-full object-contain p-4 transition duration-500 hover:scale-105"
-                      loading="lazy"
                     />
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 to-transparent p-4 text-white">
                       <p className="text-xs uppercase tracking-[0.24em] text-emerald-200">

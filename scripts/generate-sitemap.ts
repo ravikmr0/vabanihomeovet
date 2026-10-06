@@ -19,11 +19,25 @@ const productUrls = PRODUCTS.map((product) => ({
   priority: '0.8',
 }))
 
+const escapeXml = (value: string) => value
+  .replace(/&/g, '&amp;')
+  .replace(/</g, '&lt;')
+  .replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;')
+  .replace(/'/g, '&apos;')
+
 const urlEntries = [...staticUrls, ...productUrls]
-  .map(({ path, changefreq, priority }) => `  <url>\n    <loc>${siteUrl}${path}</loc>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`)
+  .map(({ path, changefreq, priority }) => {
+    const product = PRODUCTS.find((item) => path === `/products/${item.slug}`)
+    const imageEntry = product
+      ? `\n    <image:image>\n      <image:loc>${escapeXml(`${siteUrl}${product.image}`)}</image:loc>\n      <image:title>${escapeXml(product.name)}</image:title>\n    </image:image>`
+      : ''
+
+    return `  <url>\n    <loc>${siteUrl}${path}</loc>${imageEntry}\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`
+  })
   .join('\n')
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries}\n</urlset>\n`
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urlEntries}\n</urlset>\n`
 
 await writeFile(sitemapFile, sitemap, 'utf8')
 console.log(`Generated ${sitemapFile} with ${urlEntries ? urlEntries.split('\n  <url>').length : 0} URLs.`)

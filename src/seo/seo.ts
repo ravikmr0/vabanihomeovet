@@ -1,5 +1,7 @@
 export const buildProductSchema = (product: any, origin = 'https://vibanihomeovet.com') => {
-  const imageUrl = product?.image?.startsWith('http') ? product.image : `${origin}${product?.image || '/images/heroimages/complete_product_range.png'}`
+  const imageUrl = product?.image
+    ? (product.image.startsWith('http') ? product.image : `${origin}${product.image}`)
+    : undefined
 
   return {
     '@context': 'https://schema.org',
@@ -7,7 +9,7 @@ export const buildProductSchema = (product: any, origin = 'https://vibanihomeove
     name: product?.name,
     alternateName: product?.hindiName,
     description: product?.fullDescription || product?.shortDescription || '',
-    image: [imageUrl],
+    ...(imageUrl ? { image: [imageUrl] } : {}),
     brand: {
       '@type': 'Brand',
       name: 'Vibani Homeo Vet'

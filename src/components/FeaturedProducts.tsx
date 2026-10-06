@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
 import { FEATURED_PRODUCTS } from '../data/products'
+import ProductImage from './ProductImage'
 
 const FeaturedProducts = ({ onViewAll, onProductView }) => {
   const navigate = useNavigate()
@@ -98,11 +99,10 @@ const FeaturedProducts = ({ onViewAll, onProductView }) => {
                 transition={{ duration: 0.5 }}
                 className="min-h-[260px] bg-gradient-to-br from-primary/10 to-secondary/10 sm:min-h-[320px] lg:min-h-full"
               >
-                <img
+                <ProductImage
+                  productName={currentProduct.name}
                   src={currentProduct.image}
-                  alt={currentProduct.name}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
+                  className="h-full w-full object-contain p-4"
                 />
               </motion.div>
 

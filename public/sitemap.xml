@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://vibanihomeovet.com/</loc>
     <changefreq>weekly</changefreq>
@@ -17,91 +17,163 @@
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/capital-h</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/capital_h_100ml.png</image:loc>
+      <image:title>CAPITAL-H</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/fert-i</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/fert_i.png</image:loc>
+      <image:title>Fert-i</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/utroniya</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/utroniya.png</image:loc>
+      <image:title>Utroniya</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-skin-drops</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_skin_drops.png</image:loc>
+      <image:title>Viba-Skin Drops</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-milk-pro-gel</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_milk.png</image:loc>
+      <image:title>Viba-Milk Pro Gel</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-liv-100ml</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_liv_100ml.png</image:loc>
+      <image:title>Viba-Liv 100ml</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-liv-500ml</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_liv_500ml.png</image:loc>
+      <image:title>Viba-Liv 500ml</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-sept</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_sept.png</image:loc>
+      <image:title>Viba-Sept</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/frozen</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/frozen.png</image:loc>
+      <image:title>FROZEN</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-abort</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_abort.png</image:loc>
+      <image:title>Viba-ABORT</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/f-m-two</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/fm_two.png</image:loc>
+      <image:title>F.M. Two</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-cof</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_cof.png</image:loc>
+      <image:title>Viba-Cof</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/urinil</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/urinil.png</image:loc>
+      <image:title>URINIL</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/u-p-c-uterine-prolaps-care</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/upc.png</image:loc>
+      <image:title>U.P.C. Uterine Prolaps Care</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/fresh-approach</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/fresh_approach.jpeg</image:loc>
+      <image:title>Fresh Approach</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/feve-off</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/feve_off.png</image:loc>
+      <image:title>FEVE-OFF</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-milk</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_milk.png</image:loc>
+      <image:title>Viba-Milk</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vibanihomeovet.com/products/viba-must-kit</loc>
+    <image:image>
+      <image:loc>https://vibanihomeovet.com/images/products/viba_must_kit.png</image:loc>
+      <image:title>Viba-Must Kit</image:title>
+    </image:image>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

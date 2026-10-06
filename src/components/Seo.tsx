@@ -20,7 +20,13 @@ const Seo = ({ title, description, canonical, keywords = [], image, type = 'webs
     const pageTitle = title || 'Vibani Homeo Vet'
     const pageDescription = description || 'Natural homeopathic veterinary solutions for livestock, poultry, dairy animals and pets.'
     const pageCanonical = canonical || `${ORIGIN}${location.pathname}`
-    const pageImage = image?.startsWith('http') ? image : `${ORIGIN}${image || '/images/heroimages/complete_product_range.png'}`
+    const pageImage = image?.startsWith('http')
+      ? image
+      : image
+        ? `${ORIGIN}${image}`
+        : type === 'product'
+          ? undefined
+          : `${ORIGIN}/images/heroimages/complete_product_range.png`
 
     document.title = pageTitle
 
@@ -41,11 +47,16 @@ const Seo = ({ title, description, canonical, keywords = [], image, type = 'webs
     setMeta('og:description', 'property', pageDescription)
     setMeta('og:type', 'property', type)
     setMeta('og:url', 'property', pageCanonical)
-    setMeta('og:image', 'property', pageImage)
     setMeta('twitter:card', 'name', 'summary_large_image')
     setMeta('twitter:title', 'name', pageTitle)
     setMeta('twitter:description', 'name', pageDescription)
-    setMeta('twitter:image', 'name', pageImage)
+    if (pageImage) {
+      setMeta('og:image', 'property', pageImage)
+      setMeta('twitter:image', 'name', pageImage)
+    } else {
+      document.querySelector('meta[property="og:image"]')?.remove()
+      document.querySelector('meta[name="twitter:image"]')?.remove()
+    }
 
     let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
     if (!canonicalLink) {

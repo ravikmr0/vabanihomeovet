@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Search, Sparkles, ArrowRight, Stethoscope, ShieldCheck, CheckCircle, AlertCircle } from 'lucide-react'
 import { PRODUCT_CATEGORIES, PRODUCTS } from '../data/products'
+import ProductImage from './ProductImage'
 
 const ProductListing = ({ onProductClick }) => {
   const navigate = useNavigate()
@@ -282,11 +283,10 @@ const ProductListing = ({ onProductClick }) => {
                     className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_20px_60px_-25px_rgba(15,23,42,0.25)]"
                   >
                     <div className="relative aspect-[3/2] overflow-hidden bg-slate-100">
-                      <img
+                      <ProductImage
+                        productName={product.name}
                         src={product.image}
-                        alt={product.name}
                         className="h-full w-full object-contain p-4 transition duration-500 group-hover:scale-105"
-                        loading="lazy"
                       />
                       <div className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700 shadow-sm">
                         {product.badge}

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "generate-sitemap": "node --experimental-strip-types scripts/generate-sitemap.ts",
-    "build": "npm run generate-sitemap && vite build",
+    "generate-product-pages": "node --experimental-strip-types scripts/generate-product-pages.ts",
+    "build": "npm run generate-sitemap && vite build && npm run generate-product-pages",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
